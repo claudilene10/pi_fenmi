@@ -1,0 +1,499 @@
+:root {
+  --primary: #EF2F7E;
+  --bg-light: #f9f9f9;
+  --text-dark: #333;
+  --border: #ddd;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: black;
+  background-color: white;
+  line-height: 1.6;
+}
+
+/* Layout geral */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* garante responsividade */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.logo img {
+  max-width: 180px; /* tamanho máximo da logo */
+  width: 100%;      /* ocupa até o tamanho máximo */
+  height: auto;     /* mantém proporção */
+  display: block;   /* remove espaços indesejados */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* horizontal */
+  gap: 20px; /* espaçamento entre itens */
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333; /* cor normal */
+  padding: 5px 0;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+ul li a:hover {
+  color: #EF2F7E; /* cor ao passar o mouse */
+  border-bottom: 2px solid #EF2F7E; /* linha ao passar o mouse */
+}
+
+ul li a.active {
+  border-bottom: 2px solid #EF2F7E; /* linha fixa no ativo */
+  color: #000; /* cor do ativo */
+}
+
+/* Ações */
+.actions {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #EF2F7E ;
+}
+
+/* Classe .active para borda */
+.active {
+  border-bottom: 2px solid #EF2F7E;
+  padding-bottom: 2px;
+}
+
+/* Botões */
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  background: white;
+  color: #EF2F7E;
+  border: none;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  opacity: 0.5;
+  background: #ffe1eb;
+}
+
+.btn.alt {
+  background: #58ccf8;
+  color: white;
+  border: none;
+  padding: 12px 60px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn.alt:hover {
+  background: #3bb9e4;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 100%;
+  font-size: large;
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  max-width: 550px;
+  width: 80%;
+}
+
+.hero-text {
+  flex: 1;
+  font-family: 'Raleway', sans-serif;
+  width: auto;
+}
+
+.hero-text h2 {
+  font-size: 4rem;
+  padding-bottom: 100px;
+}
+
+.hero-text span {
+  color: var(--primary);
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid var(--border);
+  font-weight: bold;
+}
+
+/* Barra de busca */
+.search-bar {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Marcas e textos */
+.marca {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.email a {
+  color: #EF2F7E;
+}
+
+/* Botões adicionais (CTA) */
+.cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Títulos */
+h2 {
+  font-size: 28px;
+  color: #EF2F7E;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+/* Subtítulo */
+.sub {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  color: #EF2F7E;
+}
+
+/* Etapas numeradas */
+.etapa .num {
+  display: inline-block;
+  background: #58ccf8;
+  color: white;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+/* Listas personalizadas */
+.bullet {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bullet li::before {
+  content: "✔";
+  color: #58ccf8;
+  font-weight: bold;
+  display: inline-block;
+  width: 20px;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background: #EF2F7E;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+/* Indicadores de impacto */
+.impacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: center;
+  margin: 20px 0;
+  gap: 16px;
+}
+
+.metric {
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #58ccf8;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 18px;
+}
+
+.metric strong {
+  font-size: 24px;
+  color: #EF2F7E;
+  display: block;
+}
+
+/* FAQ */
+.faq details {
+  background: white;
+  padding: 16px;
+  border-left: 4px solid #EF2F7E;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.faq p {
+  margin-top: 10px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--bg-light);
+  color: #888;
+  background-color: #e7e5e5;
+  margin-top: 2rem;
+}
+
+/* Responsividade */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 768px) {
+  .cols-2,
+  .cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .wrap {
+    padding: 20px;
+  }
+
+  .cta {
+    gap: 12px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+
+  /* Ajustes para nav e hero */
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-img {
+    flex: unset;
+    width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-img img {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+  }
+
+  .search-bar button {
+    padding: 1rem;
+  }
+}
+
+/* Celulares e telas pequenas */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .metric {
+    font-size: 16px;
+  }
+
+  .metric strong {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+
+  .email {
+    word-break: break-word;
+  }
+
+  /* Ajuste para botões empilhados */
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn.alt {
+    padding: 12px 24px;
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Perfil do usuário com conquistas, avaliações e opções de compartilhamento." />
+  <title>Perfil de Usuário</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="CSS/perfiluser.css" />
+</head>
+<body>
+  <main>
+
+    <!-- Botão Voltar -->
+    <div class="btn-voltar">
+      <a href="minhaconta.html" class="voltar">◀ Voltar</a>
+    </div>
+
+    <!-- Seção de Perfil -->
+    <div class="profile">
+  <!-- Foto de Perfil -->
+  <div class="profile-pic-container">
+    <div class="profile-icon" id="profile-container">
+      <i class="fas fa-user" id="default-icon"></i>
+      <img id="profile-image" style="display:none;" alt="Foto de perfil" />
+    </div>
+  </div>
+
+  <!-- Informações do Usuário -->
+  <div class="profile-info">
+    <h3 id="nomeUsuario">Usuário</h3>
+    <p id="profissaoUsuario">Profissão</p>
+  </div>
+</div>
+
+
+    </div> <!-- Fim de .profile -->
+
+    <!-- Ações: Editar / Compartilhar -->
+    <div class="botoes">
+      <a href="infouser.html" class="btn-editar" role="button">
+        <i class="fas fa-user-pen"></i> Editar perfil
+      </a>
+      <button type="button" class="btn-compartilhar" id="btnCompartilhar">
+        <i class="fas fa-link"></i> Copiar link
+      </button>
+
+      <!-- Menu de Compartilhamento -->
+      <div class="menu-compartilhar" id="menuCompartilhar">
+        <button onclick="copiarLink()">📋 Copiar link</button>
+        <a href="#" target="_blank" id="btnWhatsApp">📱 WhatsApp</a>
+        <a href="#" target="_blank" id="btnFacebook">📘 Facebook</a>
+      </div>
+    </div>
+
+    <!-- Conquistas do Usuário -->
+    <section class="conquistas">
+      <h3>Minhas conquistas <span>(1/3)</span></h3>
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Ícone da conquista Ninja verificado" />
+        <span>Verificado</span>
+      </div>
+      <div class="stats">
+        <p>📌 9 serviços negociados</p>
+        <p>📅 Cadastrado desde agosto de 2021</p>
+      </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="avaliacoes">
+      <h3 style="color: #EF2F7E;">Nota Média: <span id="nota-media">0.0</span> ⭐</h3>
+
+      <div class="estrelas" id="selecao-estrelas">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+      </div>
+
+      <textarea id="comentario" placeholder="Escreva seu comentário..." rows="4"></textarea>
+      <button id="enviarComentario">Enviar Avaliação</button>
+
+      <div id="lista-comentarios"></div>
+    </section>
+
+    <!-- Mensagem de Confirmação de Link Copiado -->
+    <div id="copiado-msg">🔗 Link copiado!</div>
+
+  </main>
+
+  <script src="JS/perfiluser.js"></script>
+  <script src="JS/dark.js"></script>
+  
+
+</body>
+</html>
