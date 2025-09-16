@@ -19,17 +19,18 @@
   --radius: 10px;
 }
 
-/* DARK MODE */
+
+
 body.dark-mode {
   --texto-principal: #f1f1f1;
   --texto-secundario: #ccc;
-
   --bg-principal: #121212;
   --bg-secundario: #1E1E1E;
   --comentario-bg: #2a2a2a;
   --borda-clara: #444;
   --cinza-placeholder: #888;
 }
+
 
 body {
   background: var(--bg-principal);
@@ -48,27 +49,31 @@ main {
   animation: fadeIn 0.4s ease-in-out;
 }
 
-/* BOTÃO VOLTAR */
-.btn-voltar {
-  margin-bottom: 16px;
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid var(--borda-clara);
+  outline: none;
+  resize: vertical;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--texto-principal);
+  background: var(--bg-secundario);
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.btn-voltar a {
-  background: var(--rosa-principal);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
+textarea:hover,
+textarea:focus {
+  border-color: var(--azul-detalhe);
 }
 
-.btn-voltar a:hover {
-  background: var(--rosa-claro);
-  transform: translateY(-2px);
+textarea::placeholder {
+  color: var(--cinza-placeholder);
 }
 
-/*CABEÇALHO */
+
 .header {
   background: var(--bg-secundario);
   padding: 20px;
@@ -79,7 +84,10 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/*PERFIL*/
+
+
+
+
 .profile {
   display: flex;
   align-items: center;
@@ -87,7 +95,6 @@ main {
   margin-bottom: 25px;
   flex-wrap: wrap;
   border-radius: var(--radius);
-  height: 150px;
   padding: 10px;
   background: var(--bg-secundario);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -124,7 +131,6 @@ main {
   border-radius: 50%;
 }
 
-/* Botão de ação (foto do perfil) */
 .profile-btn {
   position: absolute;
   bottom: 8px;
@@ -149,11 +155,9 @@ main {
   gap: 12px;
 }
 
-/* Estilo normal (desktop) */
 .profile-info h3 {
   font-size: 18px;
   font-weight: 600;
-  color: var(--texto-principal);
 }
 
 .profile-info p {
@@ -162,25 +166,22 @@ main {
   color: var(--texto-secundario);
 }
 
-/* ==================================================
-   BOTÕES DO PERFIL
-================================================== */
 .botoes {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 15px;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .btn-editar,
 .btn-compartilhar {
+  text-decoration: none;
   background: var(--rosa-principal);
   color: #fff;
-  text-decoration: none;
   padding: 10px 16px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   border: none;
@@ -196,21 +197,16 @@ main {
   transform: translateY(-2px);
 }
 
-.botoes i {
-  font-size: 16px;
-}
-
-
 section {
   background: var(--bg-secundario);
   margin: 15px 0 20px;
   padding: 20px;
   border-radius: var(--radius);
   box-shadow: 0 4px 10px var(--sombra);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease, background-color 0.3s ease;
   opacity: 0;
   transform: translateY(15px);
   animation: fadeSlideIn 0.6s ease forwards;
+  transition: all 0.3s ease;
 }
 
 section:hover {
@@ -231,17 +227,14 @@ section h3 {
   gap: 10px;
 }
 
-
 .conquista {
   background: var(--rosa-principal);
   color: #fff;
   padding: 8px 12px;
   border-radius: 20px;
   font-size: 13px;
-  display: block;
-  margin-bottom: 10px; /* espaço entre eles */
+  margin-bottom: 10px;
 }
-
 
 .item {
   display: flex;
@@ -258,7 +251,6 @@ section h3 {
   font-size: 14px;
   color: var(--texto-secundario);
 }
-
 
 .avaliacoes {
   display: flex;
@@ -296,31 +288,6 @@ section h3 {
   color: var(--estrela);
 }
 
-
-textarea {
-  width: 660px;
-  margin-top: 10px;
-  padding: 8px;
-  border: 1px solid var(--borda-clara);
-  outline: none;
-  resize: none;
-  border-radius: 10px;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-  font-size: 14px;
-  color: var(--texto-principal);
-  background: var(--bg-secundario);
-}
-
-textarea:hover,
-textarea:focus {
-  border: solid 1px var(--azul-detalhe);
-  outline: none;
-}
-
-textarea::placeholder {
-  color: var(--cinza-placeholder);
-}
-
 #enviarComentario {
   margin-top: 10px;
   margin-bottom: 16px;
@@ -338,7 +305,6 @@ textarea::placeholder {
 #enviarComentario:hover {
   background: var(--rosa-hover);
 }
-
 
 .menu-compartilhar {
   display: none;
@@ -376,7 +342,6 @@ textarea::placeholder {
   color: white;
 }
 
-
 #copiado-msg {
   display: none;
   position: fixed;
@@ -398,7 +363,48 @@ textarea::placeholder {
   opacity: 1;
 }
 
+/*navegador2*/
+.nav2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: var(--bg-principal);
+  background: var(--bg-secundario);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
+  padding: 10px 0;
+  box-shadow: 0 -2px 6px var(--sombra-suave);
+}
+.nav2 a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--texto-principal);
+
+  transition: color 0.3s ease;
+}
+.nav2 a.active,
+.nav2 a:hover {
+  color: var(--rosa-principal);
+  font-weight: bold;
+}
+.nav2 svg { width: 22px; height: 22px; }
+
+.nav2 a[href="minha_conta_cliente.html"].active {
+  color: var(--texto-principal);
+  font-weight: normal;
+}
+
+
+/*navegador1*/
 nav {
   position: fixed;
   bottom: 0;
@@ -424,9 +430,10 @@ nav a {
     align-items: center;
     height: auto;
   }
+
   .profile-container {
-    flex-direction: column;   /* empilha a foto e os textos */
-    text-align: center;       /* centraliza os textos */
+    flex-direction: column;
+    text-align: center;
   }
 
   .profile-info {
@@ -440,23 +447,18 @@ nav a {
   .profile-info p {
     font-size: 13px;
   }
+
   .botoes {
     width: 100%;
-    justify-content: center;
   }
 
   .btn-editar,
   .btn-compartilhar {
     flex: 1;
+    justify-content: center;
     min-width: 120px;
-    text-align: center;
-  }
-
-  textarea {
-    width: 100%;
   }
 }
-
 
 @keyframes fadeSlideIn {
   to {

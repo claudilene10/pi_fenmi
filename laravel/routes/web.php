@@ -18,18 +18,38 @@ Route::get('/painel', function() {
     return view('painel');
 });
 
-Route::get('/novidades',function(){
-    return view('novidades'); 
-})->name("novidades");
-
+#------------------
+# Rotas: CRUD Novidades
+#------------------
 # rota que usa o método Store para cadastrar os dados
-Route::post('/novidades',[NovidadesController::class,'index'])->name('novidades');
+
+# exibe os dados no painel - cRud - SELECT
+Route::get('/novidades',[NovidadesController::class,'index'])->name('novidades');
+
+# cadastra o dado no banco -Crud -INSERT
+Route::post('/novidades',[NovidadesController::class,'create']);
+
+# cadastra o dado no banco -crUd -UPDATE
+Route::put('/novidades',[NovidadesController::class,'update']);
+
+Route::get('/novodades',[NovidadesController::class,'edit'])->name('novidades.editar');
+
+# cadastra o dado no banco -cruD - DELETE
+Route::delete('/novidades',[NovidadesController::class,'destroy'])->name('novidades.apagar');
+
+
 
 Route::get('/dev/faker', [NovidadesController::class,'dadosTeste']); 
 
+Route::get('/buscar-servicos', [ServicoController::class, 'buscar'])->name('buscar.servicos');
 
+#------------------
+# Rotas: CRUD Modelos
+#------------------
+# rota que usa o método Store para cadastrar os dados
 
-
+# exibe os dados no painel - cRud - SELECT
+Route::get('/modelos',[NovidadesController::class,'index'])->name('modelos');
 
 
 
@@ -123,10 +143,29 @@ Route::get('/login',function(){ // essa rota vai para loja pedidos área interno
     return view('fenmi/login'); 
 })->name('login');
 
+
+
+
 #minhacontah 
-Route::get('/minhaconta',function(){ // essa rota vai para loja pedidos área interno só com minhacontahttp://127.0.0.1:5000/laravel/public/minhaconta
-    return view('fenmi/minhaconta'); 
-});
+Route::get('/minhacontacliente',function(){ // essa rota vai para loja pedidos área interno só com minhacontahttp://127.0.0.1:5000/laravel/public/minhacontacliente
+    return view('fenmi/minhacontacliente'); 
+})->name('minhacontacliente');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #perfil user
 Route::get('/perfiluser',function(){ // essa rota vai para loja pedidos área interno só com perfiluser http://127.0.0.1:5000/laravel/public/perfiluser
@@ -171,9 +210,28 @@ Route::get('/quemsomos',function(){ // essa rota vai para loja pedidos área int
 #solicitação
 Route::get('/solicitacao',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/solicitacao
     return view('fenmi/solicitacao'); 
-});
+})->name('solicitacao');
 
-Route::get('/buscar-servicos', [ServicoController::class, 'buscar'])->name('buscar.servicos');
+#esqueceu a senha
+Route::get('/esqueceu_senha',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/esqueceu_senha
+    return view('fenmi/esqueceu_senha'); 
+})->name('esqueceu_senha');
+
+#planejar reforma
+Route::get('/planejar_reforma',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/planejar_reforma
+    return view('fenmi/planejar_reforma'); 
+})->name('planejar_reforma');
+
+#cadastro inicial
+Route::get('/cadastro_inicial',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/cadastro_inicial
+    return view('fenmi/cadastro_inicial'); 
+})->name('cadastro_inicial');
+
+
+
+
+
+
 
 
 

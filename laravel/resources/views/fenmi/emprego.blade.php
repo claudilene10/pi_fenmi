@@ -29,7 +29,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Raleway', sans-serif;
+      font-family: 'inter', sans-serif;
     }
 
     body {
@@ -41,122 +41,12 @@
       flex-direction: column;
     }
 
-  
-  /* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;       /* garante responsividade */
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--border);
-  gap: 1rem;
-}
 
-/* Ícone do menu */
-#menu {
-  font-size: 2rem;
-  cursor: pointer;
-  display: none; /* só aparece no mobile */
-}
-
-
-
-  .logo img {
-    max-width: 180px; /* tamanho máximo da logo */
-    width: 100%;      /* ocupa até o tamanho máximo */
-    height: auto;     /* mantém proporção */
-    display: block;   /* remove espaços indesejados */
-    margin: 0;        /* remove margens extras */
-    padding: 0;       /* remove padding */
-  }
-
-  
-
-  nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 1.2rem;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    /* se quiser na horizontal */
-    gap: 20px;
-    /* espaçamento entre os itens */
-  }
-
-  ul li a {
-    text-decoration: none;
-    color: #333;
-    /* cor normal */
-    padding: 5px 0;
-    transition: color 0.3s, border-bottom 0.3s;
-  }
-
-  ul li a:hover {
-    color: #EF2F7E;
-    /* cor ao passar o mouse */
-    border-bottom: 2px solid #EF2F7E;
-    /* linha ao passar o mouse */
-  }
-
-  ul li a.active {
-    border-bottom: 2px solid #EF2F7E;
-    /* linha fixa no ativo */
-    color: #000;
-    /* cor do ativo */
-  }
-
-
-
-
-  .actions {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .active {
-    border-bottom: 2px solid #EF2F7E;
-    /* cor e espessura da linha */
-    padding-bottom: 2px;
-    /* espaço entre texto e linha */
-  }
-
-  .btn {
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    border: 1px solid var(--primary);
-    background: white;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-  }
-
-  .btn.primary {
-    background: var(--primary);
-    color: white;
-  }
-
-  .btn:hover {
-    opacity: 0.5;
-  }
 
     /* Emprego Section */
     .emprego-section {
       flex-grow: 1;
-      background: var(--bg-light);
+      background: #fff;
       padding: 4rem 1rem;
     }
 

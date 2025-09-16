@@ -1,3 +1,10 @@
+<!-- Importando o template via blade -->
+@extends('fenmi/_template_frontend_fenmi')
+<!-- Main -->
+  @section('area_de_conteudo')
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,10 +18,7 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header>
-    <!-- Espaço reservado para cabeçalho no futuro -->
-  </header>
+ 
 
   <!-- Seção Hero -->
   <section class="hero">
@@ -65,37 +69,10 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="footer-section">
-      <strong>FENMI PARA VOCÊ</strong>
-      <div class="footer-links">
-        <a href="#">Catálogo de serviços</a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <strong>PARA PROFISSIONAIS</strong>
-      <div class="footer-links">
-        <a href="#">Cadastre-se como profissional</a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <strong>INSTITUCIONAL</strong>
-      <div class="footer-links">
-        <a href="#">Sobre o Fenmi</a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <strong>CENTRAL DE AJUDA</strong>
-      <p>Segunda a sexta: 08h às 18h</p>
-      <button class="b2">Acesse a Central de Ajuda</button>
-    </div>
-  </footer>
+ 
 
-  <div class="bottom-footer">
-    © 2025 Fenmi - Todos os direitos reservados | <a href="profissionaltermos.html">Termos de Uso</a> | <a href="profissionalpriv.html">Política de Privacidade</a>
-  </div>
   <script src="JS/dark.js"></script>
 
 </body>
 </html>
+@endsection

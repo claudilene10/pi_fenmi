@@ -13,13 +13,13 @@
   }
 
   body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: white;
     color: var(--text-dark);
 
   }
 
-
+ 
 
   /* Header */
 header {
@@ -103,7 +103,7 @@ header {
     /* linha fixa no ativo */
     color: #000;
     /* cor do ativo */
-  }
+  } */
 
 
 
@@ -238,7 +238,7 @@ header {
     gap: 1rem;
     padding: 2rem;
     justify-content: center;
-
+    
 
   }
 
@@ -257,8 +257,21 @@ header {
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     transition: box-shadow 0.3s;
+    text-decoration: none;   /* tira o sublinhado */
+    color: var(--primary);   /* texto cor da variável */
+    display: inline-block;   /* deixa o link parecer botão */
   }
 
+  .category a {
+    all: unset;              /* reseta todos os estilos padrão */
+    display: block;          /* ocupa todo o botão */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+    color: inherit;          /* herda a cor do botão */
+  }
+ 
   .category:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
@@ -319,6 +332,16 @@ header {
     transition: all 0.3s ease;
 
   }
+
+  .btnEntenda  a {
+    all: unset;              /* reseta todos os estilos padrão */
+    display: block;          /* ocupa todo o botão */
+    
+    cursor: pointer;
+    text-align: center;
+    color: inherit;          /* herda a cor do botão */
+  }
+ 
 
 
   .cards-benefits {
@@ -460,14 +483,6 @@ header {
 }
 
 
-
-
-
-
-
-
-
-
 .carousel-btn {
   background-color: #58ccf8;
   border: none;
@@ -482,7 +497,7 @@ header {
 }
 
 .carousel-btn:hover {
-  background-color: #0056b3;
+  background-color: #58ccf8;
 }
 
 
@@ -510,6 +525,16 @@ header {
   background-color: #fff4ee;
   padding: 40px 20px;
 }
+.hero-fenmi a {
+  all: unset;              /* reseta todos os estilos padrão */
+  display: block;          /* ocupa todo o botão */
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  color: inherit;          /* herda a cor do botão */
+}
+
 
 .hero-fenmi-content {
   display: flex;
@@ -521,7 +546,7 @@ header {
 }
 
 .hero-fenmi-img {
-  width: 250px;
+  width: 500px;
   max-width: 100%;
 }
 
@@ -891,5 +916,5 @@ header {
     gap: 0.5rem;
   }
 }
-
+}
 

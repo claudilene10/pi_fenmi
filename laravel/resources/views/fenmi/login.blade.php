@@ -26,8 +26,8 @@
         <button type="submit" class="btn">Entrar</button>
       </form>
       <div class="links">
-        <a href="#">Esqueceu a senha?</a>
-        <a href="{{ route('') }">Não tem conta? Cadastre-se</a>
+      <a href="{{ route('esqueceu_senha') }}">Esqueceu a senha?</a>
+        <a href="{{ route('cadastro_inicial') }}">Não tem conta? Cadastre-se</a>
       </div>
     </div>
   </main>

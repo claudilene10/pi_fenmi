@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fenmi - Serviços por Mulheres</title>
 <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/ecosistema.css');}}">
 
 
   <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> -->
@@ -14,7 +15,11 @@
 <body>
   <header>
     <button id="menu" ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
-    <div class="logo"><img src="images/Foto de logo fenmi.jpg" alt="fenmi"></div>
+    <div class="logo">
+  <a href="{{ route('inicio') }}" class="active">
+    <img src="images/Foto de logo fenmi.jpg" alt="fenmi">
+  </a>
+</div>
     <nav>
         <ul>
       <li><a href="{{ route('inicio') }}" class="active">Início</a></li>

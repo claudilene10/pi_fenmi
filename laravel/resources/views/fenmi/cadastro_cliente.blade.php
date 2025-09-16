@@ -1,95 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastro Cliente</title>
-    <link rel="stylesheet" href="css/cadastroCliente.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/minhaconta.css">
 </head>
 <body>
 
-  
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1 class="titulo">Minha Conta</h1>
+    <button class="btn-dark" id="toggleDark">🌙Modo Escuro</button>
+  </header>
 
-
-
-    <div class="container">
-      <div class="fenmi">
-        <div class="logo">
-          <img src="image/Foto de logo fenmi.jpg" alt="Logo do site" />
-        </div> 
-        <h2>Cadastro - Cliente</h2>
-    
-        <form>
-          <!-- Dados Pessoais -->
-          <div class="section-title">1. Dados pessoais</div>
-          <label for="nome">Nome completo</label>
-          <input type="text" id="nome" placeholder="Ex: Maria dos Santos" required />
-    
-          <label for="apelido">Apelido ou nome preferido</label>
-          <input type="text" id="apelido" placeholder="Ex: Mari" />
-    
-          <label for="genero">Identidade de Gênero</label>
-          <select id="genero" required>
-            <option disabled selected>Selecione</option>
-            <option>Mulher (Trans ou Cis)</option>
-            <option>Homem (Trans ou Cis)</option>
-            <option>Gênero Não-Binário</option>
-            <option>Outro</option>
-           
-          </select>
-    
-          <label for="cpf">CPF</label>
-          <input type="text" id="cpf" placeholder="000.000.000-00" />
-    
-          <label for="contato_emergencia">Contato de emergência</label>
-          <input type="tel" id="contato_emergencia" placeholder="(11) 91234-5678" />
-    
-         
-    
-          <!--  Verificação -->
-          <div class="section-title">2. Verificação de segurança</div>
-          <label for="sms">Código SMS</label>
-          <input type="text" id="sms" placeholder="Digite o código recebido" />
-    
-    
-          <!--  Foto de Perfil -->
-          <div class="section-title">3. Foto de perfil</div>
-          <label for="foto">Envie uma foto</label>
-          <input type="file" id="foto" accept="image/*" />
-    
-          <!-- Consentimentos -->
-          <div class="section-title">4. Consentimentos</div>
-          <div class="checkbox-group">
-            <label><input type="checkbox" required /> Aceito os termos de segurança e comportamento</label>
-            <label><input type="checkbox" required /> Concordo com o uso dos meus dados conforme a LGPD</label>
-          </div>
-    
-          <div class="section-title">5. Recursos de acessibilidade ou inclusão</div>
-
-          <p class="descricao-acessibilidade">
-            Este app se preocupa com a sua segurança e conforto. Se você possui alguma deficiência ou necessidade especial (física, auditiva, visual ou outra), conte para a gente como podemos ajudar:
-          </p>
-          
-          <label for="necessidades">Deseja informar alguma necessidade específica?</label>
-          <textarea id="necessidades" rows="3" placeholder="Digite aqui"></textarea>
-          
-          <p class="mensagem-acessibilidade">
-            Essas informações são usadas apenas para melhorar sua experiência e serão tratadas conforme a LGPD.
-          </p>
-    
-          <!-- Botão de cadastro -->
-          <button type="submit" class="btn">Cadastrar</button>
-        </form>
-    
-        
-    
-        <!-- 7. Links úteis -->
-        <div class="links-uteis">
-          <a href="termosDeUso.html">Termos de Uso</a>
-          <a href="privacidade.html">Política de Privacidade</a>
-          <a href="termosCancelamento.html">Política de Cancelamento</a>
-          <a href="#">FAQ / Ajuda</a>
+  <!-- Perfil -->
+  <section class="profile">
+    <!-- Foto de Perfil -->
+    <div class="profile-pic-container">
+      <label for="upload-photo" class="profile-label" aria-label="Alterar foto de perfil">
+        <div class="profile-icon" id="profile-container">
+          <i class="fas fa-user" id="default-icon"></i>
+          <img id="profile-image" style="display:none;" alt="Foto de perfil do usuário" />
         </div>
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" hidden />
+
+      <!-- Botão de ação (camera/lixeira) -->
+      <button id="profile-action" class="profile-btn" aria-label="Alterar foto de perfil">
+        <i class="fas fa-camera"></i>
+      </button>
+    </div>
+
+    <!-- Informações do Usuário -->
+    <div class="profile-info">
+      <h3 id="nomeUsuario">Usuário</h3>
+      <p id="profissaoUsuario">Profissão</p>
+    </div>
+  </section>
+
+  <!-- Seções -->
+  <a class="section" href="perfiluser.html"><span><i class="fas fa-user"></i> Meu Perfil</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="meajuda.html"><span><i class="fas fa-headset"></i> Me ajuda</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="termoscancelamento.html"><span><i class="fas fa-file-circle-xmark"></i> Termos de Cancelamento</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="termosdeuso.html"><span><i class="fas fa-file-alt"></i> Termos de uso</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="privacidade.html"><span><i class="fas fa-shield-alt"></i> Política de privacidade</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" id="logout-btn" href="login.html"><span><i class="fas fa-sign-out-alt"></i> Sair do aplicativo</span><i class="fas fa-chevron-right"></i></a>
+
+  <!-- Botão de Emergência -->
+  <button class="btn-emergencia" onclick="enviarEmergencia()">
+    <i class="fas fa-exclamation-triangle"></i> Emergência
+  </button>
+
+  <!-- Navegação Inferior -->
+  <nav class="nav">
+    <a href="lojaPedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg><span>Pedidos</span></a>
+    <a href="aceitos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Aceitos</span></a>
+    <a href="realizados.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Realizados</span></a>
+    <a href="minha_conta_cliente.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg><span>Minha Conta</span></a>
+  </nav>
+
+  <!-- Modal de confirmação -->
+  <div class="modal-overlay" id="confirm-modal">
+    <div class="modal">
+      <h2>Deseja realmente sair?</h2>
+      <p>Você será desconectado da sua conta.</p>
+      <div class="modal-buttons">
+        <button onclick="confirmarSaida()">Sim</button>
+        <button onclick="fecharModal()">Cancelar</button>
       </div>
+    </div>
+  </div>
+
+  <script src="JS/minhaconta.js"></script>
+  <script src="JS/dark.js"></script>
 </body>
 </html>

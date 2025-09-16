@@ -8,86 +8,16 @@
 
 /* ===== Body ===== */
 body {
-  background-color: #f7f8fa;
+  background-color: #fff;
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* ===== Header ===== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  flex-wrap: wrap;
-}
-
-header .logo img {
-  max-height: 50px;
-}
-
-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #EF2F7E;
-}
-
-.actions {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.btn, .btn-pro {
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn.primary {
-  background-color: #EF2F7E;
-  color: #fff;
-  border-color: #EF2F7E;
-}
-
-.btn.primary:hover {
-  background-color: #d82f70;
-}
-
-.btn-pro {
-  background-color: transparent;
-  color: #EF2F7E;
-  border: 1px solid #EF2F7E;
-}
-
-.btn-pro:hover {
-  background-color: #EF2F7E;
-  color: #fff;
-}
 
 /* ===== Hero Section ===== */
 .hero {
-  background-color: #fdfdfd;
+  background-color: #fff;
   padding: 3rem 1rem;
   text-align: center;
 }
@@ -272,22 +202,9 @@ nav ul li a.active {
   transform: scale(1.05);
 }
 
-/* ===== Footer ===== */
-footer {
-  background-color: #fff;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  color: #555;
-  font-size: 0.9rem;
-  border-top: 1px solid #eee;
-}
-
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+ 
   .actions {
     margin-top: 1rem;
     flex-direction: column;

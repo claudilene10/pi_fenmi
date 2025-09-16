@@ -13,15 +13,8 @@ body {
   color: var(--texto);
 }
 
-/* Layout base */
-header,
-footer {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
+
+
 
 /* Hero */
 .hero {
@@ -114,29 +107,11 @@ footer {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Rodapé */
-footer {
-  background: var(--bg-light);
-}
 
-footer .footer-section {
-  flex: 1 1 200px;
-  margin: 20px;
-  color: #EF2F7E;
-}
 
-.footer-links a {
-  display: block;
-  margin: 5px 0;
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
 
-.footer-links a:hover {
-  color: #EF2F7E;
-}
+
+
 
 .b2 {
   background-color: #EF2F7E;
@@ -155,24 +130,9 @@ footer .footer-section {
   
 }
 
-.bottom-footer {
-  background: var(--bg-light);
-  text-align: center;
-  padding: 20px;
-  font-size: 13px;
-  color: #888;
-}
 
-.bottom-footer a {
-  color: #888;
-  text-decoration: underline;
-  transition: color 0.3s;
-}
 
-.bottom-footer a:hover {
-  color: #888;
-  text-decoration: none ;
-}
+
 
 /* Responsividade */
 @media (max-width: 768px) {

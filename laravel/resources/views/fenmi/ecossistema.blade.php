@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fenmi Sustentável</title>
-  <link rel="stylesheet" href="css/ecosistema.css">
+    <link rel="stylesheet" href="{{asset('css/ecosistema.css');}}">
 </head>
 <body>
   

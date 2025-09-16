@@ -5,34 +5,31 @@
 
 
 
-  <section class="hero">
-  <div class="hero-text">
-    <h2>Uma nova forma de <strong><span><br>contratar profissionais</span></strong></h2>
-    <div class="search-bar">
-  <form action="{{ route('buscar.servicos') }}" method="GET">
-    <input type="text" name="q" placeholder="Serviço ou especialidade">
-    <button type="submit">Pesquisar</button>
-  </form>
-</div>
-    <div id="resultado"></div> <!-- onde o resultado vai aparecer -->
-  </div>
-  <div class="hero-img">
-    <img src="images/couple-5963678_1920.png" alt="Profissional Fenmi" />
-  </div>
-</section>
+  <section class="hero"> <div class="hero-text"> <h2>Uma nova forma de <strong><span><br>contratar profissionais</span></strong></h2> <div class="search-bar"> <input type="text" id="searchInput" placeholder="Serviço ou especialidade"> <button onclick="buscarServicos()">Pesquisar</button> </div> <div id="resultado"></div> <!-- onde o resultado vai aparecer --> </div> <div class="hero-img"> <img src="images/couple-5963678_1920.png" alt="Profissional Fenmi" /> </div> </section>
 
   <section class="categories" id="categoriaContainer">
-    <div class="category"><img src="images/faucet.png" alt="Hidráulico"><div>Serviços Hidráulicos</div></div>
-    <div class="category"><img src="images/light-bulb.png" alt="Elétrico"><div>Serviços Elétricos</div></div>
-    <div class="category"><img src="images/ar-condicionado (1).png" alt="Ar"><div>Ar-condicionado</div></div>
-    <div class="category"><img src="images/chave-de-fenda.png" alt="Reparos"><div>Pequenos Reparos</div></div>
-    <div class="category"><img src="images/furadeira-de-mao.png" alt="Instalações"><div>Instalações</div></div>
-    <div class="category"><img src="images/balde-de-tinta.png" alt="Decoração"><div>Decoração</div></div>
-    <div class="category"><img src="images/limpeza (1).png" alt="Limpeza"><div>Serviços de Limpeza</div></div>
-    <div class="category"><img src="images/colher-de-pedreiro.png" alt="Piso"><div>Serviços de Piso</div></div>
-    <div class="category"><img src="images/armario (2).png" alt="Móveis"><div>Montagem de Móveis</div></div>
-    <div class="category"><img src="images/caminhao.png" alt="Fretes"><div>Fretes</div></div>
-    <div class="category"><img src="images/rolo-de-pintura.png" alt="Pintura"><div>Pintura</div></div>
+    <div class="category"><img src="images/faucet.png" alt="Hidráulico"><div> 
+    <a href="{{ route('catalogo') }}" class="link-back">Serviços Hidráulicos</a>   </div></div>
+    <div class="category"><img src="images/light-bulb.png" alt="Elétrico"><div>
+    <a href="{{ route('catalogo') }}" class="link-back"> Serviços Elétricos</a>   </div></div>
+    <div class="category"><img src="images/ar-condicionado (1).png" alt="Ar"><div>       
+    <a href="{{ route('catalogo') }}" class="link-back">Ar-condicionado</a>   </div></div>
+    <div class="category"><img src="images/chave-de-fenda.png" alt="Reparos"><div>   
+    <a href="{{ route('catalogo') }}" class="link-back">Pequenos Reparos</a>    </div></div>
+    <div class="category"><img src="images/furadeira-de-mao.png" alt="Instalações"><div>    
+    <a href="{{ route('catalogo') }}" class="link-back"> Instalações</a>  </div></div>
+    <div class="category"><img src="images/balde-de-tinta.png" alt="Decoração"><div> 
+    <a href="{{ route('catalogo') }}" class="link-back">  Decoração</a>  </div></div>
+    <div class="category"><img src="images/limpeza (1).png" alt="Limpeza"><div>
+    <a href="{{ route('catalogo') }}" class="link-back">   Serviços de Limpeza</a>  </div></div>
+    <div class="category"><img src="images/colher-de-pedreiro.png" alt="Piso"><div>
+    <a href="{{ route('catalogo') }}" class="link-back">  Serviços de Piso</a>   </div></div>
+    <div class="category"><img src="images/armario (2).png" alt="Móveis"><div>
+    <a href="{{ route('catalogo') }}" class="link-back">  Montagem de Móveis</a>   </div></div>
+    <div class="category"><img src="images/caminhao.png" alt="Fretes"><div>
+    <a href="{{ route('catalogo') }}" class="link-back">  Fretes</a>    </div></div>
+    <div class="category"><img src="images/rolo-de-pintura.png" alt="Pintura"><div>
+    <a href="{{ route('catalogo') }}" class="link-back"> Pintura</a>  </div></div>
   </section>
 
 
@@ -46,7 +43,8 @@
       <br>
       <br>
   
-      <button class="btnEntenda">Entenda como funciona</button>
+      <button class="btnEntenda">
+      <a href="{{ route('quemsomos') }}">Entenda como funciona</a> </button>
     </div>
   
     <div class="cards-benefits">
@@ -93,82 +91,83 @@
       </div>
        <div class="service-card">
         <img src="images/desinstalação de ar-condicionado.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <h4>Desinstalação de ar-condicionado</h4>
+        <p>⭐ 4.8 (732 avaliações)</p>
+        <p><strong>Preço médio R$355,00</strong></p>
       </div>
        <div class="service-card">
         <img src="images/higienização de colções.webp" width="100%">
-        <h4>Serviços elétricos</h4>
+        <h4>Limpeza de colchões</h4>
         <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <p><strong>Preço médio R$ 250,00</strong></p>
       </div>
        <div class="service-card">
         <img src="images/instalação de papel de parede.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <h4>Instalação de papel de parede</h4>
+        <p>⭐ 4.9 (462 avaliações)</p>
+        <p><strong>Preço médio R$ 130,00</strong></p>
       </div>
        <div class="service-card">
         <img src="images/instalação de perciana e cortina.webp" width="100%">
-        <h4>Serviços elétricos</h4>
+        <h4>Instalação de rede de proteção</h4>
         <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <p><strong>Preço médio R$ 432,00</strong></p>
       </div>
        <div class="service-card">
         <img src="images/instalação de rede de proteção.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <h4>Instalação de rede de proteção</h4>
+        <p>⭐ 5.0 (799 avaliações)</p>
+        <p><strong>Preço médio R$ 432,00</strong></p>
       </div>
        <div class="service-card">
         <img src="images/instalação de suporte de tv.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
+        <h4>Instalação de suporte de TV</h4>
+        <p>⭐ 4.9 (124 avaliações)</p>
         <p><strong>Preço médio R$ 177,87</strong></p>
       </div>
        <div class="service-card">
         <img src="images/limpeza caixa d'agua.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
+        <h4>Limpeza de caixa d'água</h4>
+        <p>⭐ 4.9 (150 avaliações)</p>
         <p><strong>Preço médio R$ 177,87</strong></p>
       </div>
       <div class="service-card">
         <img src="images/limpeza de calha.webp" width="100%">
         <h4>Serviços elétricos</h4>
         <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <p><strong>Preço médio R$ 233,00</strong></p>
       </div>
       <div class="service-card">
         <img src="images/limpeza de tapete.webp" width=100%">
-        <h4>Serviços elétricos</h4>
+        <h4>Limpeza de Tapetes</h4>
         <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <p><strong>Preço médio R$ 389,00</strong></p>
       </div>
       <div class="service-card">
         <img src="images/frete.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <h4>Frete</h4>
+        <p>⭐ 4.9 (6424 avaliações)</p>
+        <p><strong>Preço médio R$ 338,00</strong></p>
       </div>
       <div class="service-card">
         <img src="images/Sanitização.webp" width="100%">
-        <h4>Serviços elétricos</h4>
-        <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <h4>Sanitização</h4>
+        <p>⭐ 4.9 (396 avaliações)</p>
+        <p><strong>Preço médio R$ 250,85</strong></p>
       </div>
       <div class="service-card">
         <img src="images/montador de moveis.webp" width="100%">
-        <h4>Serviços elétricos</h4>
+        <h4>Montador de móveis</h4>
         <p>⭐ 4.9 (4424 avaliações)</p>
-        <p><strong>Preço médio R$ 177,87</strong></p>
+        <p><strong>Receba 3 orçamentos em até 24 horas!</strong></p>
       </div>
 
       <!-- repita os outros cards -->
     </div>
     <button class="carousel-btn next">&gt;</button>
   </div>
-  <a class="load-more" href="#">Carregar mais serviços</a>
+  <a href="{{ route('catalogo') }}" class="link-back"> Carregar mais serviços</a>
+  
 </section>
 
 
@@ -186,7 +185,10 @@
       <h2>Quer reformar?<br><span style="color: var(--primary);">Calma, você não precisa fazer tudo sozinha</span></h2>
       <p>Saiba como planejar e executar sua reforma. Conheça os serviços Fenmi e planeje seus custos.</p>
       <br>
-      <button class="btn primary">Quero planejar minha reforma</button>
+      <button class="btn primary">
+      <a href="{{ route('planejar_reforma') }}" class="link-back"> Quero planejar minha reforma</a>
+  
+      </button>
     </div>
   </section>
 
@@ -194,15 +196,17 @@
 
    <section class="hero-fenmi">
   <div class="hero-fenmi-content">
-    <img src="images/image.png" alt="Profissional Fenmi" class="hero-fenmi-img" />
+    <img src="images/camisa-removebg-preview.png" alt="Profissional Fenmi" class="hero-fenmi-img" />
 
     <div class="hero-fenmi-text">
       <img src="images/ChatGPT Image 20 de ago. de 2025, 11_05_11.png" alt="Logo fenmi" class="logo-fenmi" />
       <h1>0 anos conectando <br><span class="fenmi-orange">clientes e profissionais</span></h1>
 
       <div class="fenmi-buttons">
-        <button class="fenmi-btn-primary">Encontrar profissionais</button>
-        <button class="fenmi-btn-secondary">Sou profissional</button>
+        <button class="fenmi-btn-primary">
+        <a href="{{ route('catalogo') }}" class="link-back">  Encontrar profissionais</a>  </button>
+        <button class="fenmi-btn-secondary">
+        <a href="{{ route('login') }}" class=""t>Sou profissional</a>  </button>
       </div>
     </div>
   </div>

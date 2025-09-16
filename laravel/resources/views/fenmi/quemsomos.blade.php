@@ -1,3 +1,9 @@
+<!-- Importando o template via blade -->
+@extends('fenmi/_template_frontend_fenmi')
+<!-- Main -->
+  @section('area_de_conteudo')
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -95,3 +101,5 @@
 
 </body>
 </html>
+
+@endsection

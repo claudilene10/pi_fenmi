@@ -1,6 +1,7 @@
+
 /* Container padrão */
 .emprego-section {
-  background: #fafafa;
+  background: #fff;
   padding: 4rem 1rem;
   font-family: 'Raleway', sans-serif;
   color: #333;
@@ -123,7 +124,7 @@
 }
 
 .regime.clt {
-  background-color: #14b8a6; /* verde */
+  background-color: #58ccf8; /* verde */
 }
 
 .regime.pj {

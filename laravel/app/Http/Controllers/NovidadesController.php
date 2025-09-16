@@ -105,18 +105,39 @@ class NovidadesController extends Controller
       //return redirect (route('novidades'));
 
       #redirecionando para rota passando os valores encontrados
-      return redirect()->route('novidades',['dados'=>$todos]);
+      // passa direto pra view
+      
+      return view('novidades', ['dados' => $todos]);
+      
         
 
       //  return $todos;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * cadastra o e-mail no banco.
      */
-    public function create()
+    public function create( Request $form)
     {
-        //
+        # validação dos dados
+        $dadosValidados =$form -> validate([
+            'email'=> 'required|email|max:64|unique:novidades,email',
+        ]);
+
+        #insere o dado no banco
+        $cadastro = Novidades::create([
+            'email'=> $dadosValidados['email'],
+
+        ]);
+
+        
+        if($cadastro){
+            echo '<script>alert("E-mail cadastrado!");</script>';
+        }else {
+            echo '<script>alert("E-mail já cadastrado!");</script>';
+        }
+
+        return redirect()->route('novidades');
     }
 
     /**

@@ -134,6 +134,15 @@ img{
  
             </span>
         </a>
+
+        < <a class=" nav-link w-100 p-2 mb-2 " href="{{ route('modelos') }}/novidades">
+            <span class="h4 ps-md-3 fw-normal " >
+ 
+                <i class=" bi bi-newspaper me-3 "></i>
+                <span class="d-none d-md-inline-block">Modelos</span>
+ 
+            </span>
+        </a>
  
     </nav>
  

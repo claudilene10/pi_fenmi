@@ -1,3 +1,10 @@
+<!-- Importando o template via blade -->
+@extends('fenmi/_template_frontend_fenmi')
+<!-- Main -->
+  @section('area_de_conteudo')
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -55,7 +62,7 @@
  
   <div class="grid">
     <div class="card-servico">
-      <img src="images/limpeza.jpg.jpg" alt="Limpeza">
+      <img src="images_sampaio/limpeza.jpg.jpg" alt="Limpeza">
       <h3>Limpeza</h3>
       <p>Equipe ágil e de confiança para sua casa sempre impecável.</p>
     
@@ -65,11 +72,11 @@
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 120,00</div>
     
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
     
     <div class="card-servico">
-      <img src="images/eletrica.jpg.jpg" alt="Elétrica">
+      <img src="images_sampaio/eletrica.jpg.jpg" alt="Elétrica">
       <h3>Elétrica</h3>
       <p>Troca de disjuntores, tomadas, quadro e resolução de curto-circuitos.</p>
      
@@ -79,11 +86,11 @@
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 150,00</div>
  
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/pintura.jpg" alt="Pintura">
+      <img src="images_sampaio/pintura.jpg" alt="Pintura">
       <h3>Pintura</h3>
       <p>Deixe seu ambiente renovado e bonito.</p>
       <div class="rating">
@@ -91,11 +98,11 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 200,00</div>
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/manutencao.pc.jpg" alt="Manutenção de Computadores">
+      <img src="images_sampaio/manutencao.pc.jpg" alt="Manutenção de Computadores">
       <h3>Manutenção de Computadores</h3>
       <p>Formatação, upgrade de peças e remoção de vírus.</p>
       <div class="rating">
@@ -103,11 +110,11 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 100,00</div>
-      <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
    
     <div class="card-servico">
-      <img src="images/Assistência Técnica.jpg" alt="Assistência Técnica em TI">
+      <img src="images_sampaio/Assistência Técnica.jpg" alt="Assistência Técnica em TI">
       <h3>Assistência Técnica</h3>
       <p>Configuração de redes, instalação de softwares e suporte remoto.</p>
       <div class="rating">
@@ -115,11 +122,11 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 130,00</div>
-      <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/jardinagem.jpg" alt="Jardinagem">
+      <img src="images_sampaio/jardinagem.jpg" alt="Jardinagem">
       <h3>Jardinagem</h3>
       <p>Cuidado completo com seu jardim e plantas.</p>
       <div class="rating">
@@ -127,11 +134,13 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 110,00</div>
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='#'">
+      <a href="{{ route('solicitacao') }}"></a>  
+      Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/pets.jpg" alt="Pets">
+      <img src="images_sampaio/pets.jpg" alt="Pets">
       <h3>Pets</h3>
       <p>Serviços especializados para cuidar dos seus animais.</p>
       <div class="rating">
@@ -139,11 +148,11 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 90,00</div>
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/ar-condicionado.jpg" alt="Ar-condicionado">
+      <img src="images_sampaio/ar-condicionado.jpg" alt="Ar-condicionado">
       <h3>Ar-condicionado</h3>
       <p>Instalação, manutenção e limpeza de aparelhos.</p>
       <div class="rating">
@@ -151,11 +160,11 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 180,00</div>
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/mudanca.jpg" alt="Mudança">
+      <img src="images_sampaio/mudanca.jpg" alt="Mudança">
       <h3>Mudança</h3>
       <p>Serviço de transporte de móveis com segurança.</p>
       <div class="rating">
@@ -163,11 +172,11 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 250,00</div>
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
     <div class="card-servico">
-      <img src="images/automovel.jpg" alt="Serviços Automotivos">
+      <img src="images_sampaio/automovel.jpg" alt="Serviços Automotivos">
       <h3>Serviços Automotivos</h3>
       <p>Manutenção e reparos de veículos.</p>
       <div class="rating">
@@ -175,12 +184,12 @@
       </div>
       <div class="jobs">+ de 45 serviços realizados</div>
       <div class="preco">R$ 220,00</div>
-      <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
  
   <div class="card-servico">
-    <img src="images/design.jpg" alt="Design Gráfico">
+    <img src="images_sampaio/design.jpg" alt="Design Gráfico">
     <h3>Design Gráfico</h3>
     <p>Criação de logos, artes e materiais visuais.</p>
     <div class="rating">
@@ -188,11 +197,11 @@
     </div>
     <div class="jobs">+ de 45 serviços realizados</div>
     <div class="preco">R$ 150,00</div>
-    <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
   <div class="card-servico">
-    <img src="images/saude.jpg" alt="Cuidados com a Saúde">
+    <img src="images_sampaio/saude.jpg" alt="Cuidados com a Saúde">
     <h3>Cuidados com a Saúde</h3>
     <p>Serviços de enfermagem, fisioterapia e bem-estar.</p>
     <div class="rating">
@@ -200,11 +209,11 @@
     </div>
     <div class="jobs">+ de 45 serviços realizados</div>
     <div class="preco">R$ 140,00</div>
-    <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
   <div class="card-servico">
-    <img src="images/construção.jpg" alt="Construção e Reformas">
+    <img src="images_sampaio/construção.jpg" alt="Construção e Reformas">
     <h3>Construção e Reformas</h3>
     <p>Profissionais para obras, reparos e reformas.</p>
     <div class="rating">
@@ -212,11 +221,11 @@
     </div>
     <div class="jobs">+ de 45 serviços realizados</div>
     <div class="preco">R$ 300,00</div>
-    <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
   <div class="card-servico">
-    <img src="images/Captura de tela 2025-09-09 114343.png" alt="Organizer">
+    <img src="images_sampaio/Captura de tela 2025-09-09 114343.png" alt="Organizer">
     <h3>Personal Organizer</h3>
     <p>Organização de armários, closets e ambientes para otimizar espaço e tempo.</p>
     <div class="rating">
@@ -224,11 +233,11 @@
     </div>
     <div class="jobs">+ de 45 serviços realizados</div>
     <div class="preco">R$ 160,00</div>
-    <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
   <div class="card-servico">
-    <img src="images/pexels-katerina-holmes-5905841.jpg" alt="Organizer">
+    <img src="images_sampaio/pexels-katerina-holmes-5905841.jpg" alt="Organizer">
     <h3>Aulas Particulares</h3>
     <p>Organização de armários, closets e ambientes para otimizar espaço e tempo.</p>
     <div class="rating">
@@ -236,11 +245,11 @@
     </div>
     <div class="jobs">+ de 45 serviços realizados</div>
     <div class="preco">R$ 100,00</div>
-    <button class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
   <div class="card-servico">
-    <img src="images/eventos.jpg" alt="Organização de Eventos">
+    <img src="images_sampaio/eventos.jpg" alt="Organização de Eventos">
     <h3>Organização de Eventos</h3>
     <p>Planejamento e execução de festas e reuniões.</p>
     <div class="rating">
@@ -248,12 +257,12 @@
   </div>
   <div class="jobs">+ de 45 serviços realizados</div>
   <div class="preco">R$ 400,00</div>
-    <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
  
 <div class="card-servico">
-  <img src="images/seguranca.jpg" alt="Segurança">
+  <img src="images_sampaio/seguranca.jpg" alt="Segurança">
   <h3>Segurança</h3>
   <p>Instalação de câmeras e sistemas de monitoramento.</p>
   <div class="rating">
@@ -261,11 +270,11 @@
   </div>
   <div class="jobs">+ de 45 serviços realizados</div>
   <div class="preco">R$ 350,00</div>
-    <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
 
  <div class="card-servico">
-  <img src="images/entrega.jpg" alt="Serviços de Entrega">
+  <img src="images_sampaio/entrega.jpg" alt="Serviços de Entrega">
   <h3>Serviços de Entrega</h3>
   <p>Transporte rápido de produtos e encomendas.</p>
   <div class="rating">
@@ -274,12 +283,12 @@
   <div class="jobs">+ de 45 serviços realizados</div>
   <div class="preco">R$ 80,00</div>
  
-    <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
  
 <div class="card-servico">
-  <img src="images/gastronomia.jpg" alt="Gastronomia">
+  <img src="images_sampaio/gastronomia.jpg" alt="Gastronomia">
   <h3>Gastronomia</h3>
   <p>Buffets, chefs particulares e encomendas especiais.</p>
   <div class="rating">
@@ -288,11 +297,11 @@
   <div class="jobs">+ de 45 serviços realizados</div>
   <div class="preco">R$ 250,00</div>
  
-    <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+    <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
   </div>
  
 <div class="card-servico">
-  <img src="images/carpintaria.png" alt="Carpintaria">
+  <img src="images_sampaio/carpintaria.png" alt="Carpintaria">
   <h3>Carpintaria</h3>
   <p>Móveis sob medida, consertos e restaurações em madeira.</p>
   <div class="rating">
@@ -300,7 +309,7 @@
    </div>
     <div class="jobs">+ de 45 serviços realizados</div>
     <div class="preco">R$ 200,00</div>
-      <button  class="solicitar" onclick="window.location.href='solicitacao.html'">Solicitar</button>
+      <button  class="solicitar" onclick="window.location.href='{{ route('solicitacao') }}'">Solicitar</button>
     </div>
  
   </div>
@@ -316,3 +325,5 @@
 
 </body>
 </html>
+
+@endsection
