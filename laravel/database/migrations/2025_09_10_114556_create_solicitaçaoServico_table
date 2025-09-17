@@ -1,0 +1,69 @@
+<?php
+# classe de criaçao das entidades do bancos de dados - tabela Novidade
+# usa o firework/biblioteca migrate
+ 
+# para enviar a tabela para o banco executamos os comandos do migration
+# php artisan migrate - sobre as alteraçoes e tabelas novas
+# php artisan migrate:fresh - apaga os dados das tabelas e cria as novas
+# php artisan migrate:refresh - apaga os dados e as tabelas e as recria
+# php artisan migrate:rollback --steps=2 - retorna a versao anterior do banco
+ 
+#importaçao  das classes do migrate
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+ 
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     * cria a tabela banco de dados
+     *
+     * $sql_cria_tabela = "CREATE TABLE IF NOT EXISTS estetica_t99.news (
+     * id_news INT(255) NOT NULL DEFAULT AUTO_INCREMENT PRIMARY KEY,
+     * email VARCHAR(254) NOT NULL UNIQUE,
+     * validado INT(1) NOT NULL DEFAULT 0,
+     * opt_out ENUM('sim','nao') NOT NULL DEFAULT 'sim',
+     *  )
+     *
+     */
+    public function up(): void
+    {
+        Schema::create('solicitacoes', function (Blueprint $table) {
+            $table->id('id_solicitacao'); // PK da solicitação
+ 
+            // Etapa 1 - Serviço
+            $table->string('servico', 100); // Ex: Pintura, Limpeza
+            $table->text('descricao'); // Descrição detalhada
+            $table->json('midia')->nullable(); // Fotos ou vídeos (opcional)
+ 
+            // Etapa 2 - Endereço
+            $table->string('cep', 9);
+            $table->string('rua', 150);
+            $table->string('numero', 20);
+            $table->string('bairro', 100);
+            $table->string('cidade', 100);
+            $table->string('estado', 50);
+ 
+            // Etapa 3 - Agendamento
+            $table->date('data');
+            $table->time('hora');
+ 
+            // Etapa 4 - Dados do cliente
+            $table->string('nome', 150);
+            $table->string('telefone', 20);
+            $table->string('email', 150);
+ 
+            $table->timestamps();
+        });
+    }
+ 
+    /**
+     * Reverse the migrations.
+     *
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('solicitacoes');
+    }
+};

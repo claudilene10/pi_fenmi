@@ -1,81 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Conta</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="CSS/minhaconta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- <link rel="stylesheet" href="CSS/minhacontacliente.css"> -->
+  <link rel="stylesheet" href="{{asset('CSS/minhacontacliente.css');}}">
 </head>
 <body>
- 
+
   <!-- Cabeçalho -->
-<header class="header">
-<h1 class="titulo">Minha Conta</h1>
-<button class="btn-dark" id="toggleDark">🌙Modo Escuro</button>
-</header>
- 
+  <header class="header">
+    <h1 class="titulo">Minha Conta</h1>
+    <button class="btn-dark" id="toggleDark">🌙Modo Escuro</button>
+  </header>
+
   <!-- Perfil -->
-<section class="profile">
-<!-- Foto de Perfil -->
-<div class="profile-pic-container">
-<label for="upload-photo" class="profile-label" aria-label="Alterar foto de perfil">
-<div class="profile-icon" id="profile-container">
-<i class="fas fa-user" id="default-icon"></i>
-<img id="profile-image" style="display:none;" alt="Foto de perfil do usuário" />
-</div>
-</label>
-<input type="file" id="upload-photo" accept="image/*" hidden />
- 
+  <section class="profile">
+    <!-- Foto de Perfil -->
+    <div class="profile-pic-container">
+      <label for="upload-photo" class="profile-label" aria-label="Alterar foto de perfil">
+        <div class="profile-icon" id="profile-container">
+          <i class="fas fa-user" id="default-icon"></i>
+          <img id="profile-image" style="display:none;" alt="Foto de perfil do usuário" />
+        </div>
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" hidden />
+
       <!-- Botão de ação (camera/lixeira) -->
-<button id="profile-action" class="profile-btn" aria-label="Alterar foto de perfil">
-<i class="fas fa-camera"></i>
-</button>
-</div>
- 
+      <button id="profile-action" class="profile-btn" aria-label="Alterar foto de perfil">
+        <i class="fas fa-camera"></i>
+      </button>
+    </div>
+
     <!-- Informações do Usuário -->
-<div class="profile-info">
-<h3 id="nomeUsuario">Usuário</h3>
-<p id="profissaoUsuario">Profissão</p>
-</div>
-</section>
- 
+    <div class="profile-info">
+      <h3 id="nomeUsuario">Usuário</h3>
+    </div>
+  </section>
+
   <!-- Seções -->
-<a class="section" href="perfiluser.html"><span><i class="fas fa-user"></i> Meu Perfil</span><i class="fas fa-chevron-right"></i></a>
-<a class="section" href="meajuda.html"><span><i class="fas fa-headset"></i> Me ajuda</span><i class="fas fa-chevron-right"></i></a>
-<a class="section" href="termoscancelamento.html"><span><i class="fas fa-file-circle-xmark"></i> Termos de Cancelamento</span><i class="fas fa-chevron-right"></i></a>
-<a class="section" href="termosdeuso.html"><span><i class="fas fa-file-alt"></i> Termos de uso</span><i class="fas fa-chevron-right"></i></a>
-<a class="section" href="privacidade.html"><span><i class="fas fa-shield-alt"></i> Política de privacidade</span><i class="fas fa-chevron-right"></i></a>
-<a class="section" id="logout-btn" href="login.html"><span><i class="fas fa-sign-out-alt"></i> Sair do aplicativo</span><i class="fas fa-chevron-right"></i></a>
- 
+  <a class="section" href="#"><span><i class="fas fa-user"></i> Meu Perfil</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="{{ route('meajude') }}"><span><i class="fas fa-headset"></i> Me ajuda</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="{{ route('termos_cancelamento_mika') }}"><span><i class="fas fa-file-circle-xmark"></i> Termos de Cancelamento</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="{{ route('termo_uso') }}"><span><i class="fas fa-file-alt"></i> Termos de uso</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="{{ route('privasidade') }}"><span><i class="fas fa-shield-alt"></i> Política de privacidade</span><i class="fas fa-chevron-right"></i></a>
+
+  <!-- Área de Pagamentos -->
+  <div class="section section-title" onclick="togglePagamentos()">
+    <span><i class="fas fa-credit-card"></i> Métodos de Pagamento</span>
+    <i class="fas fa-chevron-down" id="seta-pagamento"></i>
+  </div>
+
+  <div id="opcoes-pagamento" class="opcoes-pagamento">
+    <div class="section pagamento debito" onclick="abrirModalPagamento('debito')">
+      <span><i class="fas fa-university"></i> Cartão de Débito</span>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <div class="section pagamento credito" onclick="abrirModalPagamento('credito')">
+      <span><i class="fas fa-credit-card"></i> Cartão de Crédito</span>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <div class="section pagamento pix" onclick="abrirModalPagamento('pix')">
+      <span><i class="fas fa-qrcode"></i> Pix</span>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <a class="section" id="logout-btn" href="{{ route('login') }}"><span><i class="fas fa-sign-out-alt"></i> Sair da Conta</span><i class="fas fa-chevron-right"></i></a>
+
   <!-- Botão de Emergência -->
-<button class="btn-emergencia" onclick="enviarEmergencia()">
-<i class="fas fa-exclamation-triangle"></i> Emergência
-</button>
- 
+  <button class="btn-emergencia" onclick="enviarEmergencia()">
+    <i class="fas fa-exclamation-triangle"></i> Emergência
+  </button>
+
   <!-- Navegação Inferior -->
-<nav class="nav">
-<a href="lojaPedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg><span>Pedidos</span></a>
-<a href="aceitos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Aceitos</span></a>
-<a href="realizados.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Realizados</span></a>
-<a href="minha_conta_cliente.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg><span>Minha Conta</span></a>
-</nav>
- 
-  <!-- Modal de confirmação -->
-<div class="modal-overlay" id="confirm-modal">
-<div class="modal">
-<h2>Deseja realmente sair?</h2>
-<p>Você será desconectado da sua conta.</p>
-<div class="modal-buttons">
-<button onclick="confirmarSaida()">Sim</button>
-<button onclick="fecharModal()">Cancelar</button>
-</div>
-</div>
-</div>
- 
+  <nav class="nav">
+    <a href="{{ route('loja_pedidos') }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg><span>Pedidos</span></a>
+    <a href="{{ route('pedidos_aceito') }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Aceitos</span></a>
+    <a href="{{ route('realizados') }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Realizados</span></a>
+    <a href="{{ route('minhacontacliente') }}" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg><span>Minha Conta</span></a>
+  </nav>
+
+  <!-- Modal de confirmação (Logout) -->
+  <div class="modal-overlay" id="confirm-modal">
+    <div class="modal">
+      <h2>Deseja realmente sair?</h2>
+      <p>Você será desconectado da sua conta.</p>
+      <div class="modal-buttons">
+        <button onclick="confirmarSaida()">Sim</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Pagamentos -->
+  <div class="modal-overlay" id="modal-pagamento">
+    <div class="modal">
+      <h2 id="titulo-pagamento">Pagamento</h2>
+      <p id="descricao-pagamento">Selecione a forma de pagamento.</p>
+      <div class="modal-buttons">
+        <button onclick="fecharPagamento()">Fechar</button>
+        <button onclick="salvarPagamento()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="JS/minhaconta.js"></script>
-<script src="JS/dark.js"></script>
+  <script src="JS/dark.js"></script>
 </body>
 </html>

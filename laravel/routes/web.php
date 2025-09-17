@@ -2,6 +2,7 @@
 # importaçoes de classes do laravel
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NovidadesController;
+
  
 # define uma rota - url - caminho
 Route::get('/', function () {
@@ -93,9 +94,9 @@ Route::get('/cadastro_prestadora_etapa2',function(){ // essa rota vai para cadas
 })->name('cadastro_prestadora_etapa2');
 
 #pedidos_aceito 
-Route::get('/pedidos_aceito',function(){ // essa rota vai para aceito http://127.0.0.1:5000/laravel/public/cadastro_prestadora_etapa2
+Route::get('/pedidos_aceito',function(){ // essa rota vai para aceito http://127.0.0.1:5000/laravel/public/pedidos_aceito
     return view('fenmi/pedidos_aceito'); 
-});
+})->name('pedidos_aceito');
 
 #cadastro_cliente
 Route::get('/cadastro_cliente',function(){ // essa rota vai para cadastro_cliente http://127.0.0.1:5000/laravel/public/cadastro_cliente
@@ -105,12 +106,12 @@ Route::get('/cadastro_cliente',function(){ // essa rota vai para cadastro_client
 #loja_pedidos
 Route::get('/loja_pedidos',function(){ // essa rota vai para loja pedidos área interno só com loja_pedidos http://127.0.0.1:5000/laravel/public/loja_pedidos
     return view('fenmi/loja_pedidos'); 
-});
+})->name('loja_pedidos');
 
 #privasidade
 Route::get('/privasidade',function(){ // essa rota vai para loja pedidos área interno só com privasidade http://127.0.0.1:5000/laravel/public/privasidade
     return view('fenmi/privasidade'); 
-});
+})->name('privasidade');
 
 #realizado
 Route::get('/realizados',function(){ // essa rota vai para loja pedidos área interno só com privasidade http://127.0.0.1:5000/laravel/public/realizados
@@ -120,12 +121,12 @@ Route::get('/realizados',function(){ // essa rota vai para loja pedidos área in
 #termo_cancelamento
 Route::get('/termo_cancelamento',function(){ // essa rota vai para loja pedidos área interno só com privasidade http://127.0.0.1:5000/laravel/public/termo_cancelamento
     return view('fenmi/termo_cancelamento'); 
-});
+})->name('termo_cancelamento');
 
 #termo_cancelamento
 Route::get('/termo_uso',function(){ // essa rota vai para loja pedidos área interno só com privasidade http://127.0.0.1:5000/laravel/public/termo_uso
     return view('fenmi/termo_uso'); 
-});
+})->name('termo_uso');
 
 
 #validação
@@ -138,6 +139,7 @@ Route::get('/infouser',function(){ // essa rota vai para loja pedidos área inte
     return view('fenmi/infouser'); 
 });
 
+
 #login
 Route::get('/login',function(){ // essa rota vai para loja pedidos área interno só com login http://127.0.0.1:5000/laravel/public/login
     return view('fenmi/login'); 
@@ -146,16 +148,23 @@ Route::get('/login',function(){ // essa rota vai para loja pedidos área interno
 
 
 
-#minhacontah 
+#minhaconta cliente
 Route::get('/minhacontacliente',function(){ // essa rota vai para loja pedidos área interno só com minhacontahttp://127.0.0.1:5000/laravel/public/minhacontacliente
     return view('fenmi/minhacontacliente'); 
 })->name('minhacontacliente');
 
 
 
+#meajuda
+Route::get('/meajuda',function(){ // essa rota vai para loja pedidos área interno só com minhaconta http://127.0.0.1:5000/laravel/public/meajuda
+    return view('fenmi/meajuda'); 
+})->name('meajude');
 
 
-
+#meajuda
+Route::get('/realizados',function(){ // essa rota vai para loja pedidos área interno só com minhaconta http://127.0.0.1:5000/laravel/public/realizados
+    return view('fenmi.realizados'); 
+})->name('realizados');
 
 
 
@@ -190,12 +199,12 @@ Route::get('/termos_profissional',function(){ // essa rota vai para loja pedidos
 #termo de cancelamento mika
 Route::get('/termos_cancelamento_mika',function(){ // essa rota vai para loja pedidos área interno só com termos_cancelamento_mika http://127.0.0.1:5000/laravel/public/termos_cancelamento_mika
     return view('fenmi/termos_cancelamento_mika'); 
-});
+})->name('termos_cancelamento_mika');
 
 #termos_uso_mika
 Route::get('/termos_uso_mika',function(){ // essa rota vai para loja pedidos área interno só com termos_uso_mika http://127.0.0.1:5000/laravel/public/termos_uso_mika
     return view('fenmi/termos_uso_mika'); 
-});
+})->name('termos_uso_mika');
 
 #catalogo
 Route::get('/catalogo',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/catalogo
@@ -228,18 +237,44 @@ Route::get('/cadastro_inicial',function(){ // essa rota vai para loja pedidos á
 })->name('cadastro_inicial');
 
 
+#------------------------
+#perfil prestadora
+#-------------------------
 
+# HistoricoDeAtendimentos
+Route::get('/HistoricoDeAtendimentos',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/HistoricoDeAtendimentos
+    return view('fenmi/HistoricoDeAtendimentos'); 
+})->name('HistoricoDeAtendimentos');
 
+# informacao_Profissinal
+Route::get('/informacao_Profissinal',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/informacao_Profissinal
+    return view('fenmi/informacao_Profissinal'); 
+})->name('informacao_Profissinal');
 
+# meajudeprofissional
+Route::get('/meajudeprofissional',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/meajudeprofissional
+    return view('fenmi/meajudeprofissional'); 
+})->name('meajudeprofissional');
 
+# informacao_Profissinal
+Route::get('/minhacontaprofissional',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/minhacontaprofissional
+    return view('fenmi/minhacontaprofissional'); 
+})->name('minhacontaprofissional');
 
+# informacao_Profissinal
+Route::get('/perfil_profissional',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/perfil_profissional
+    return view('fenmi/perfil_profissional'); 
+})->name('perfil_profissional');
 
+# informacao_Profissinal
+Route::get('/termos_de_usoprofissional',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/termos_de_usoprofissional
+    return view('fenmi/termos_de_usoprofissional'); 
+})->name('termos_de_usoprofissional');
 
-
-
-
-
-
+# informacao_Profissinal
+Route::get('/validar_doc_profissional',function(){ // essa rota vai para loja pedidos área interno só com catalogo http://127.0.0.1:5000/laravel/public/validar_doc_profissional
+    return view('fenmi/validar_doc_profissional'); 
+})->name('validar_doc_profissional');
 
 
 

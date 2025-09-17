@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loja de Pedidos</title>
+  <title>Pedidos Realizados</title>
   <link rel="stylesheet" href="realizados.css" />
 </head>
 <body>
   <!--  CABEÇALHO  -->
   <header>
-    <h1>Loja de Pedidos</h1>
+    <h1>Pedidos Realizados</h1>
   </header>
 
  
@@ -160,22 +160,22 @@
   <!-- BARRA DE NAVEGAÇÃO INFERIOR -->
   <footer>
     <nav>
-      <a href="lojaPedidos.html" >
+      <a href="{{ route('loja_pedidos') }}" >
         <!-- ícone pedidos-->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
         <span>Pedidos</span>
       </a>
-      <a href="aceitos.html" >
+      <a href="{{ route('pedidos_aceito') }}" >
         <!-- ícone aceitos-->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         <span>Aceitos</span>
       </a>
-      <a href="realizados.cs" class="active" >
+      <a href="{{ route('realizados') }}" class="active" >
         <!-- ícone realizados-->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         <span>Realizados</span>
       </a>
-      <a href="#">
+      <a href="{{ route('minhacontacliente') }}">
         <!-- ícone conta-->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg>
         <span>Minha Conta</span>

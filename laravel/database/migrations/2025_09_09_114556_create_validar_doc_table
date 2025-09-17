@@ -1,0 +1,64 @@
+<?php
+# classe de criaçao das entidades do bancos de dados - tabela Novidade
+# usa o firework/biblioteca migrate
+ 
+# para enviar a tabela para o banco executamos os comandos do migration
+# php artisan migrate - sobre as alteraçoes e tabelas novas
+# php artisan migrate:fresh - apaga os dados das tabelas e cria as novas
+# php artisan migrate:refresh - apaga os dados e as tabelas e as recria
+# php artisan migrate:rollback --steps=2 - retorna a versao anterior do banco
+ 
+#importaçao  das classes do migrate
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+ 
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     * cria a tabela banco de dados
+     *
+     * $sql_cria_tabela = "CREATE TABLE IF NOT EXISTS estetica_t99.news (
+     * id_news INT(255) NOT NULL DEFAULT AUTO_INCREMENT PRIMARY KEY,
+     * email VARCHAR(254) NOT NULL UNIQUE,
+     * validado INT(1) NOT NULL DEFAULT 0,
+     * opt_out ENUM('sim','nao') NOT NULL DEFAULT 'sim',
+     *  )
+     *
+     */
+    public function up(): void
+    {
+ 
+        Schema::create('documentos', function (Blueprint $table) {
+            $table->id('id_documento');
+ 
+            // Uploads obrigatórios
+            $table->string('cpf_arquivo')->nullable(); // caminho do arquivo CPF
+            $table->string('rg_arquivo')->nullable(); // caminho do arquivo RG
+            $table->string('comprovante_endereco')->nullable(); // comprovante de endereço
+ 
+            // Certificação profissional (opcional)
+            $table->string('certificado_profissional')->nullable();
+ 
+            // Status de verificação de cada documento
+            $table->enum('status_cpf', ['aguardando', 'aprovado', 'reprovado'])->default('aguardando');
+            $table->enum('status_rg', ['aguardando', 'aprovado', 'reprovado'])->default('aguardando');
+            $table->enum('status_comprovante', ['aguardando', 'aprovado', 'reprovado'])->default('aguardando');
+            $table->enum('status_certificado', ['aguardando', 'aprovado', 'reprovado'])->default('aguardando');
+ 
+            $table->timestamps();
+        });
+ 
+       
+    }
+ 
+    /**
+     * Reverse the migrations.
+     *
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('documentos');
+    }
+};
