@@ -1,0 +1,100 @@
+body {
+    font-family: sans-serif;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+
+.logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.container {
+    background: white;
+    padding: 60px 60px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px 4px;
+    max-width: 500px;
+    width: 100%;
+    
+}
+
+  h2 {
+    color: #EF2F7E;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+h1,
+p {
+    text-align: center;
+    color: black;
+}
+h1{
+
+    color: #EF2F7E;
+}
+
+label {
+    font-size: 0.85rem;
+    display:
+        block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #F9A4B4;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+   input[type="file"] {
+    padding: 8px;
+  }
+
+button {
+    width: 100%;
+    background-color: #EF2F7E;
+    color: white;
+    padding: 14px;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #F279A1;
+}
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 3px;
+  }
+  
+  .checkbox-group label {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #333;
+}

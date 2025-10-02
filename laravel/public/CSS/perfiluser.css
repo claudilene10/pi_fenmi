@@ -1,0 +1,468 @@
+
+:root {
+  --rosa-principal: #EF2F7E;
+  --rosa-claro: #F279A1;
+  --rosa-hover: #F9A4B4;
+  --azul-detalhe: #58ccf8;
+
+  --texto-principal: #000000;
+  --texto-secundario: #666;
+  --estrela: gold;
+  --sombra: rgba(0, 0, 0, 0.08);
+
+  --bg-principal: #fff;
+  --bg-secundario: #f8f8f8;
+  --comentario-bg: #f8f8f8;
+  --borda-clara: #ddd;
+  --cinza-placeholder: #888;
+
+  --radius: 10px;
+}
+
+
+
+body.dark-mode {
+  --texto-principal: #f1f1f1;
+  --texto-secundario: #ccc;
+  --bg-principal: #121212;
+  --bg-secundario: #1E1E1E;
+  --comentario-bg: #2a2a2a;
+  --borda-clara: #444;
+  --cinza-placeholder: #888;
+}
+
+
+body {
+  background: var(--bg-principal);
+  font-family: 'Inter', sans-serif;
+  color: var(--texto-principal);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  max-width: 720px;
+  width: 100%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid var(--borda-clara);
+  outline: none;
+  resize: vertical;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--texto-principal);
+  background: var(--bg-secundario);
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+textarea:hover,
+textarea:focus {
+  border-color: var(--azul-detalhe);
+}
+
+textarea::placeholder {
+  color: var(--cinza-placeholder);
+}
+
+
+.header {
+  background: var(--bg-secundario);
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--texto-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  border-radius: var(--radius);
+  padding: 10px;
+  background: var(--bg-secundario);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.profile-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: #888;
+  overflow: hidden;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  background-color: var(--azul-detalhe);
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.profile-btn:hover {
+  transform: scale(1.1);
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-info p {
+  font-size: 14px;
+  margin-top: 4px;
+  color: var(--texto-secundario);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.btn-editar,
+.btn-compartilhar {
+  text-decoration: none;
+  background: var(--rosa-principal);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-editar:hover,
+.btn-compartilhar:hover {
+  background: var(--rosa-claro);
+  transform: translateY(-2px);
+}
+
+section {
+  background: var(--bg-secundario);
+  margin: 15px 0 20px;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px var(--sombra);
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeSlideIn 0.6s ease forwards;
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: var(--rosa-principal);
+}
+
+
+.lista-conquistas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.conquista {
+  background: var(--rosa-principal);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item img {
+  width: 32px;
+  margin-right: 10px;
+}
+
+.stats {
+  font-size: 14px;
+  color: var(--texto-secundario);
+}
+
+.avaliacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comentario {
+  background: var(--comentario-bg);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border-left: 4px solid var(--azul-detalhe);
+  transition: background-color 0.3s ease;
+}
+
+.comentario p {
+  font-size: 14px;
+  color: var(--texto-secundario);
+}
+
+.stars {
+  color: var(--estrela);
+  margin-bottom: 5px;
+}
+
+.estrelas span {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.estrelas span.ativa {
+  color: var(--estrela);
+}
+
+#enviarComentario {
+  margin-top: 10px;
+  margin-bottom: 16px;
+  background: var(--rosa-principal);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  height: 34px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 14px;
+  transition: background 0.3s ease;
+}
+
+#enviarComentario:hover {
+  background: var(--rosa-hover);
+}
+
+.menu-compartilhar {
+  display: none;
+  position: absolute;
+  margin-top: 10px;
+  background: var(--bg-principal);
+  padding: 10px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px;
+  z-index: 999;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-compartilhar.show {
+  display: flex;
+}
+
+.menu-compartilhar button,
+.menu-compartilhar a {
+  background: transparent;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.menu-compartilhar button:hover,
+.menu-compartilhar a:hover {
+  background: var(--rosa-principal);
+  color: white;
+}
+
+#copiado-msg {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#copiado-msg.mostrar {
+  display: block;
+  opacity: 1;
+}
+
+/*navegador2*/
+.nav2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: var(--bg-principal);
+  background: var(--bg-secundario);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 10px 0;
+  box-shadow: 0 -2px 6px var(--sombra-suave);
+}
+.nav2 a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--texto-principal);
+
+  transition: color 0.3s ease;
+}
+.nav2 a.active,
+.nav2 a:hover {
+  color: var(--rosa-principal);
+  font-weight: bold;
+}
+.nav2 svg { width: 22px; height: 22px; }
+
+.nav2 a[href="minha_conta_cliente.html"].active {
+  color: var(--texto-principal);
+  font-weight: normal;
+}
+
+
+/*navegador1*/
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-secundario);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid var(--borda-clara);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--texto-secundario);
+  font-size: 20px;
+}
+
+
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-info {
+    margin-top: 8px;
+  }
+
+  .profile-info h3 {
+    font-size: 16px;
+  }
+
+  .profile-info p {
+    font-size: 13px;
+  }
+
+  .botoes {
+    width: 100%;
+  }
+
+  .btn-editar,
+  .btn-compartilhar {
+    flex: 1;
+    justify-content: center;
+    min-width: 120px;
+  }
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

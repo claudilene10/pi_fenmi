@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitação de Serviço</title>
+  <link rel="stylesheet" href="css_sampaio/catalogo.css">
+  <link rel="stylesheet" href="css_sampaio/solicitacao.css">
+</head>
+
+<body>
+  <main class="solicitacao-container">
+    <header>
+      <h1>Solicitar Serviço</h1>
+      <p>Preencha os dados para concluir sua solicitação.</p>
+    </header>
+
+    <!-- Barra de progresso -->
+    <nav class="progress-bar" aria-label="Etapas do formulário">
+      <div class="progress" id="progress"></div>
+      <span class="step active">1</span>
+      <span class="step">2</span>
+      <span class="step">3</span>
+      <span class="step">4</span>
+      <span class="step">5</span>
+    </nav>
+
+    <form id="solicitacaoForm">
+      <!-- Etapa 1 -->
+      <section class="form-step active" aria-label="Informações do Serviço">
+        <h2>Informações do Serviço</h2>
+
+        <label>
+          Qual serviço você precisa?
+          <input type="text" name="servico" placeholder="Ex: Pintura, Limpeza, Eletricista" required />
+        </label>
+
+        <label>
+          Descrição detalhada
+          <textarea name="descricao" placeholder="Descreva o que precisa ser feito..." required></textarea>
+        </label>
+
+        <label>
+          Adicione fotos ou vídeos (opcional)
+          <input type="file" name="midia[]" accept="image/*,video/*" multiple />
+        </label>
+
+        <button type="button" class="btn next-btn">Próximo</button>
+      </section>
+
+      <!-- Etapa 2 -->
+      <section class="form-step" aria-label="Endereço">
+        <h2>Endereço</h2>
+
+        <div class="grid-2">
+          <label>
+            CEP
+            <input type="text" name="cep" placeholder="00000-000" required />
+          </label>
+          <label>
+            Rua
+            <input type="text" name="rua" required />
+          </label>
+        </div>
+
+        <div class="grid-3">
+          <label>
+            Número
+            <input type="text" name="numero" required />
+          </label>
+          <label>
+            Bairro
+            <input type="text" name="bairro" required />
+          </label>
+          <label>
+            Cidade
+            <input type="text" name="cidade" required />
+          </label>
+        </div>
+
+        <label>
+          Estado
+          <input type="text" name="estado" required />
+        </label>
+
+        <div class="buttons">
+          <button type="button" class="btn prev-btn">Voltar</button>
+          <button type="button" class="btn next-btn">Próximo</button>
+        </div>
+      </section>
+
+      <!-- Etapa 3 -->
+      <section class="form-step" aria-label="Agendamento">
+        <h2>Agendamento</h2>
+
+        <div class="grid-2">
+          <label>
+            Data
+            <input type="date" name="data" required />
+          </label>
+          <label>
+            Horário
+            <input type="time" name="hora" required />
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn prev-btn">Voltar</button>
+          <button type="button" class="btn next-btn">Próximo</button>
+        </div>
+      </section>
+
+      <!-- Etapa 4 -->
+      <section class="form-step" aria-label="Seus Dados">
+        <h2>Seus Dados</h2>
+
+        <label>
+          Nome Completo
+          <input type="text" id="nome" name="nome" required />
+        </label>
+
+        <label>
+          Telefone
+          <input type="tel" id="telefone" name="telefone" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="email" name="email" required />
+        </label>
+
+        <div class="buttons">
+          <button type="button" class="btn prev-btn">Voltar</button>
+          <button type="button" class="btn next-btn">Próximo</button>
+        </div>
+      </section>
+
+      <!-- Etapa 5 -->
+      <section class="form-step" aria-label="Forma de Pagamento">
+        <h2>Forma de Pagamento</h2>
+      
+        <fieldset class="payment-options">
+          <legend>Escolha uma opção</legend>
+      
+          <label class="option">
+            <input type="radio" name="pagamento" value="Dinheiro" required />
+            <span>Dinheiro</span>
+          </label>
+      
+          <label class="option">
+            <input type="radio" name="pagamento" value="pix" required />
+            <span>PIX</span>
+          </label>
+      
+          <label class="option">
+            <input type="radio" name="pagamento" value="Cartão/" required />
+            <span>Cartão de Crédito/Débito</span>
+          </label>
+        </fieldset>
+      
+        <!-- Campos extras para cartão -->
+        <div id="dadosCartao" style="display:none; margin-top:1rem;">
+          <label>
+            Número do Cartão
+            <input type="text" name="numero_cartao" placeholder="0000 0000 0000 0000" />
+          </label>
+      
+          <div class="grid-2">
+            <label>
+              Validade
+              <input type="text" name="validade" placeholder="MM/AA" />
+            </label>
+      
+            <label>
+              CVV
+              <input type="text" name="cvv" placeholder="123" />
+            </label>
+          </div>
+        </div>
+      
+        <div class="buttons">
+          <button type="button" class="btn prev-btn">Voltar</button>
+          <button type="submit" class="btn">Finalizar</button>
+        </div>
+      </section>
+
+    <!-- Resumo -->
+
+  </main>
+
+  <script src="js/solicitacao.js"></script>
+</body>
+</html>
