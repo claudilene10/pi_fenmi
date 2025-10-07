@@ -4,38 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meu Perfil</title>
-  <link rel="stylesheet" href="CSS/infouser.css" />
+  <link rel="stylesheet" href="{{ asset('CSS/infouser.css') }}" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-
-
   <div class="form-container">
     <div class="btn-voltar">
-    <a href="perfiluser.html">◀ Voltar</a>
+    <a href="{{ route('minhacontacliente') }}">◀ Voltar</a>
   </div>
-    <h2>Meus Dados</h2>
+   <h2>Meus Dados</h2>
+ 
+        {{-- Exibição dos dados do usuário autenticado --}}
+<div class="info">
+<h3 id="nomeUsuario">{{ Auth::user()->name ?? 'Usuário' }}</h3>
+<p><strong>E-mail:</strong> <span id="emailUsuario">{{ Auth::user()->email ?? 'usuario@gmail.com' }}</span></p>
+<p><strong>Telefone:</strong> <span id="telefoneUsuario">{{ Auth::user()->telefone ?? '(00) 00000-0000' }}</span></p>
+<p><strong>Endereço:</strong> <span id="enderecoUsuario">{{ Auth::user()->endereco ?? 'Não informado' }}</span></p>
+<p><strong>CPF:</strong> <span id="cpfUsuario">{{ Auth::user()->cpf ?? 'Não informado' }}</span></p>
+</div>
+ 
+   <form id="perfilForm" class="form-box" action="{{ route('infouser.update') }}" method="POST">
+    @csrf
+    @method('PUT')
+    <input type="text" name="nome" value="{{ $usuario->nome }}" placeholder="Nome" required />
+    <input type="email" name="email" value="{{ $usuario->email }}" placeholder="E-mail" required />
+    <input type="tel" name="telefone" value="{{ $usuario->telefone }}" placeholder="Telefone" />
+    <input type="text" name="endereco" value="{{ $usuario->endereco }}" placeholder="Endereço" />
+    <input type="text" name="cpf" value="{{ $usuario->cpf }}" placeholder="CPF" />
+    <button type="submit" class="btn salvar">Salvar</button>
+    
+</form>
 
-    <div class="info">
-      <h3 id="nomeUsuario">Usuário</h3>
-     <p id="emailUsuario"> usuario@gamil.com</p>
-     <p id="telefoneUsuario">(11)9999-9999</p>
-    </div>
-
-    <form id="perfilForm" class="form-box">
-      <h2>Editar Perfil</h2>
-
-      <input type="text" name="nome" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="E-mail" required />
-      <input type="tel" name="telefone" placeholder="Telefone" required />
-      <input type="text" name="cep" placeholder="CEP" required />
-      <input type="text" name="endereco" placeholder="Endereço" required />
-      <input type="text" name="cpf" placeholder="CPF" required />
-
-      <button type="submit" class="btn salvar">Salvar</button>
-      <button type="button" id="btnExcluir" class="btn excluir">Excluir Conta</button>
-    </form>
-  </div>
+<form action="{{ route('infouser.destroy') }}" method="POST" id="excluirForm">
+    @csrf
+    @method('DELETE')
+    <input type="hidden" name="user_id" value="{{ $usuario->id_usuario }}">
+  <button type="button" id="btnExcluir" class="btn excluir">Excluir Conta</button>
+</form>
 
   <!-- Modal de Logout -->
   <div id="confirm-modal" class="modal">
@@ -47,7 +52,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- Modal de Excluir Conta -->
   <div id="modalExcluir" class="modal">
     <div class="modal-content">
@@ -59,10 +64,7 @@
       </div>
     </div>
   </div>
-  
  
-
-
   <script src="JS/infouser.js"></script>
   <script src="JS/dark.js"></script>
 </body>

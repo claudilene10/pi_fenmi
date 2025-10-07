@@ -37,7 +37,7 @@
 
    <!-- Ações: Editar / Compartilhar -->
 <div class="botoes">
-  <a href="{{ route('infouser') }}" class="btn-editar" role="button">
+  <a href="{{ route('infouser.show') }}" class="btn-editar" role="button">
     <i class="fas fa-user-pen"></i> Editar perfil
   </a>
   <button type="button" class="btn-compartilhar" id="btnCompartilhar">

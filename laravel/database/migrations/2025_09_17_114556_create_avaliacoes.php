@@ -29,13 +29,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perfilUser', function (Blueprint $table) {
-            $table->id('id_usuario');
-            $table->string('nome', 150);
-            $table->string('email', 254)->unique();
-            $table->string('telefone', 20)->nullable();
-            $table->string('profissao', 100)->nullable();
-            $table->string('foto_perfil')->nullable();
+        Schema::create('avaliacoes', function (Blueprint $table) {
+            $table->id('id_avaliacao');
+            $table->foreignId('id_usuario')->constrained('users')->onDelete('cascade');
+            $table->tinyInteger('nota')->unsigned(); // 1 a 5
+            $table->text('comentario')->nullable();
             $table->timestamps();
         });
 
@@ -47,6 +45,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('perfilUser');
+        Schema::dropIfExists('avaliacoes');
     }
 };
+
+
+
+
+        

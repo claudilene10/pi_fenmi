@@ -72,7 +72,7 @@
     </div>
   </div>
 
-  <script src="JS/minhaconta.js"></script>
+  <script src="JS/minhacontapro.js"></script>
   <script src="JS/dark.js"></script>
   <script src="JS/minhaconta.js"></script>
 </body>

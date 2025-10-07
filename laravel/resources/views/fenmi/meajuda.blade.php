@@ -10,7 +10,7 @@
 <body>
 
   <div class="btn-voltar">
-    <a href="minha_conta_cliente.html" aria-label="Voltar para minha conta"><span aria-hidden="true">◀</span> Voltar</a>
+    <a href="{{ route('minhacontacliente') }}" aria-label="Voltar para minha conta"><span aria-hidden="true">◀</span> Voltar</a>
   </div>
 
   <h1>Me Ajuda</h1>

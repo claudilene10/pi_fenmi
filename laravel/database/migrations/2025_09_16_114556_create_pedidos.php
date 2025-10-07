@@ -29,13 +29,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perfilUser', function (Blueprint $table) {
-            $table->id('id_usuario');
-            $table->string('nome', 150);
-            $table->string('email', 254)->unique();
-            $table->string('telefone', 20)->nullable();
-            $table->string('profissao', 100)->nullable();
-            $table->string('foto_perfil')->nullable();
+        Schema::create('pedidos', function (Blueprint $table) {
+            $table->id('id_pedido');
+            #$table->foreignId('id_normal')->constrained('cadastroNormal')->onDelete('cascade');
+            $table->string('servico', 150);
+            $table->enum('status', ['Concluído', 'Em andamento', 'Orçamento solicitado']);
+            $table->decimal('valor', 10, 2)->nullable();
+            $table->date('data')->nullable();
             $table->timestamps();
         });
 
@@ -47,6 +47,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('perfilUser');
+        Schema::dropIfExists('pedidos');
     }
 };
+

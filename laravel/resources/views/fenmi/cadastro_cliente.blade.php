@@ -19,17 +19,19 @@
         </div> 
         <h2>Cadastro - Cliente</h2>
     
-        <form>
+          <form action="{{ route('cadastro_cliente') }}" method="POST">
+        @csrf
+
           <!-- Dados Pessoais -->
           <div class="section-title">1. Dados pessoais</div>
           <label for="nome">Nome completo</label>
-          <input type="text" id="nome" placeholder="Ex: Maria dos Santos" required />
+          <input type="text" id="nome" name="nome" placeholder="Ex: Maria dos Santos" required />
     
           <label for="apelido">Apelido ou nome preferido</label>
-          <input type="text" id="apelido" placeholder="Ex: Mari" />
+          <input type="text" id="apelido" name="apelido" placeholder="Ex: Mari" />
     
           <label for="genero">Gênero</label>
-          <select id="genero" required>
+          <select id="genero" name="genero"required>
             <option disabled selected>Selecione</option>
             <option>Feminino</option>
             <option>Masculino</option>
@@ -38,23 +40,23 @@
           </select>
     
           <label for="cpf">CPF</label>
-          <input type="text" id="cpf" placeholder="000.000.000-00" />
+          <input type="text" id="cpf"  name="cpf"placeholder="000.000.000-00" />
     
           <label for="contato_emergencia">Contato de emergência</label>
-          <input type="tel" id="contato_emergencia" placeholder="(11) 91234-5678" />
+          <input type="tel" id="contato_emergencia" name="contato_emergencia"placeholder="(11) 91234-5678" />
     
          
     
           <!--  Verificação -->
           <div class="section-title">2. Verificação de segurança</div>
           <label for="sms">Código SMS</label>
-          <input type="text" id="sms" placeholder="Digite o código recebido" />
+          <input type="text" id="sms" name="sms" placeholder="Digite o código recebido" />
     
     
           <!--  Foto de Perfil -->
           <div class="section-title">3. Foto de perfil</div>
           <label for="foto">Envie uma foto</label>
-          <input type="file" id="foto" accept="image/*" />
+          <input type="file" id="foto" name="foto" accept="image/*" />
     
           <!-- Consentimentos -->
           <div class="section-title">4. Consentimentos</div>
@@ -70,7 +72,7 @@
           </p>
           
           <label for="necessidades">Deseja informar alguma necessidade específica?</label>
-          <textarea id="necessidades" rows="3" placeholder="Digite aqui"></textarea>
+          <textarea id="necessidades" rows="3" name="necessidades" placeholder="Digite aqui"></textarea>
           
           <p class="mensagem-acessibilidade">
             Essas informações são usadas apenas para melhorar sua experiência e serão tratadas conforme a LGPD.

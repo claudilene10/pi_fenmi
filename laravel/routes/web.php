@@ -7,6 +7,9 @@ use App\Http\Controllers\Cadastro1Controller;
 use App\Http\Controllers\CadastroNormalController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PerfilUserController;
+use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\CadastroClienteController;
 
  
 // # define uma rota - url - caminho
@@ -147,6 +150,8 @@ Route::get('/cadastro_cliente',function(){ // essa rota vai para cadastro_client
 });
 
 Route::post('/cadastro_cliente', [LoginController::class, 'logout'])->name('cadastro_cliente');
+Route::post('/cadastro_cliente', [CadastroClienteController::class, 'store'])->name('cadastro_cliente');
+
 
 // Login (tela)
 Route::get('/login', function () {
@@ -158,6 +163,17 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.process');
 
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+
+
+
+
+Route::post('/logout-conta', function () {
+    Auth::logout(); // desloga o usuário
+    return redirect()->route('login'); // redireciona para a tela de login
+})->name('logout.conta');
 
 
 
@@ -173,7 +189,6 @@ Route::get('/minhacontacliente',function(){ // essa rota vai para loja pedidos �
 Route::get('/meajuda',function(){ // essa rota vai para loja pedidos área interno só com minhaconta http://127.0.0.1:5000/laravel/public/meajuda
     return view('fenmi/meajuda'); 
 })->name('meajude');
-
 
 
 #perfil user
@@ -240,10 +255,28 @@ Route::get('/termo_uso',function(){ // essa rota vai para loja pedidos área int
     return view('fenmi/termo_uso'); 
 })->name('termo_uso');
 
-#nfouser
-Route::get('/infouser',function(){ // essa rota vai para loja pedidos área interno só com infouser http://127.0.0.1:5000/laravel/public/infouser
-    return view('fenmi/infouser'); 
-})->name('infouser');
+
+
+
+Route::get('/infouser', [InfoUserController::class, 'show'])->name('infouser.show');
+Route::post('/infouser/update', [InfoUserController::class, 'update'])->name('infouser.update');
+Route::delete('/infouser/destroy', [InfoUserController::class, 'destroy'])->name('infouser.destroy');
+Route::put('/infouser/update', [InfoUserController::class, 'update'])->name('infouser.update');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pedidos_aceito 
 Route::get('/pedidos_aceito',function(){ // essa rota vai para aceito http://127.0.0.1:5000/laravel/public/pedidos_aceito
     return view('fenmi/pedidos_aceito'); 
