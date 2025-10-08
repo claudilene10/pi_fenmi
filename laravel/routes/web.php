@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PerfilUserController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\CadastroClienteController;
+use App\Http\Controllers\ContaClienteController;
 
  
 // # define uma rota - url - caminho
@@ -179,11 +180,16 @@ Route::post('/logout-conta', function () {
 
 #perfil cliente
 #-------------------------
-
 #minhaconta cliente
-Route::get('/minhacontacliente',function(){ // essa rota vai para loja pedidos área interno só com minhaconta http://127.0.0.1:5000/laravel/public/minhacontacliente
-    return view('fenmi/minhacontacliente'); 
-})->name('minhacontacliente');
+//Route::get('/minhacontacliente', [InfoUserController::class,'show'])->name('minhacontacliente');
+
+
+
+Route::get('/minhacontacliente', [ContaClienteController::class,'show'])->name('minhacontacliente');
+
+
+
+
 
 #meajuda
 Route::get('/meajuda',function(){ // essa rota vai para loja pedidos área interno só com minhaconta http://127.0.0.1:5000/laravel/public/meajuda
@@ -192,7 +198,7 @@ Route::get('/meajuda',function(){ // essa rota vai para loja pedidos área inter
 
 
 #perfil user
-Route::get('/perfiluser',function(){ // essa rota vai para loja pedidos área interno só com perfiluser http://127.0.0.1:5000/laravel/public/perfiluser
+Route::get('/perfiluser/{id?}',function(){ // essa rota vai para loja pedidos área interno só com perfiluser http://127.0.0.1:5000/laravel/public/perfiluser
     return view('fenmi/perfiluser'); 
 })->name('perfiluser');
 

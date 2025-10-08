@@ -44,7 +44,7 @@
   </section>
 
   <!-- Seções -->
-  <a class="section" href="{{ route('perfiluser')}}"><span><i class="fas fa-user"></i> Meu Perfil</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="{{ route('perfiluser')}}/{{$user['id_normal']}}"><span><i class="fas fa-user"></i> Meu Perfil</span><i class="fas fa-chevron-right"></i></a>
   <a class="section" href="{{ route('meajude') }}"><span><i class="fas fa-headset"></i> Me ajuda</span><i class="fas fa-chevron-right"></i></a>
   <a class="section" href="{{ route('termos_cancelamento_mika') }}"><span><i class="fas fa-file-circle-xmark"></i> Termos de Cancelamento</span><i class="fas fa-chevron-right"></i></a>
   <a class="section" href="{{ route('termo_uso') }}"><span><i class="fas fa-file-alt"></i> Termos de uso</span><i class="fas fa-chevron-right"></i></a>

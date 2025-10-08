@@ -2,17 +2,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\InfoUser;
+use App\Models\ContaCliente;
 
-class InfoUserController extends Controller
+class ContaClienteController extends Controller
 {
     public function show()
     {
 
-        $usuario = InfoUser::where('id_normal','=', '2')->first();
+        $usuario = ContaCliente::where('id_normal','=', '2')->first();
 
        
-        return view('fenmi.infouser', compact('usuario'));
+        return view('fenmi.minhacontacliente', compact('usuario'));
     }
 
     public function update(Request $request)
@@ -27,23 +27,12 @@ class InfoUserController extends Controller
             'nome' => 'required|string|max:150',
             'email' => 'required|email|max:150',
             'telefone' => 'nullable|string|max:20',
-            'endereco' => 'nullable|string|max:200',
-            'cpf' => 'nullable|string|max:14',
+            'profissao' => 'nullable|string|max:200',
+            'foto_perfil' => 'nullable|string|max:255',
+            'modo_escuro' => 'nullable|boolean',
         ]));
 
         return redirect()->back()->with('success', 'Dados atualizados com sucesso!');
     }
 
-    public function destroy()
-    {
-        $usuario = auth()->user();
-
-        if (!$usuario) {
-            return redirect()->back()->with('error', 'Nenhum usuário logado para excluir.');
-        }
-
-        $usuario->delete();
-
-        return redirect()->route('minhacontacliente')->with('success', 'Conta excluída com sucesso!');
-    }
 }

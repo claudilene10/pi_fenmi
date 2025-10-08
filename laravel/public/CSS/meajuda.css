@@ -57,14 +57,14 @@ body.dark-mode {
 }
 
 /* titulo */
-h1 {
-  color: var(--rosa-principal);
+h1,h2 {
+  color: #58ccf8;
 }
 
 /* ajuda item */
 .ajuda-item {
   background: var(--bg-secundario);
-  color: var(--texto-principal);
+  color: var(--texto-secundario);
   border-radius: 12px;
   padding: 15px;
   margin: 10px 0;

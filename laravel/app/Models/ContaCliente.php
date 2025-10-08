@@ -5,21 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class InfoUser extends Model
+class ContaCliente extends Model
 {
     use HasFactory;
 
    
     protected $table = 'cadastroNormal';
-    protected $primaryKey = 'id_informacao';
+    protected $primaryKey = 'id_conta';
     public $timestamps = true;
 
     protected $fillable = [
         'nome',
         'email',
         'telefone',
-        'cep',
-        'endereco',
-        'cpf',
+        'profissao',
+        'foto_perfil',
+        'modo_escuro',
     ];
 }

@@ -24,15 +24,15 @@ class LoginController extends Controller
             auth()->login($user); // autentica
 
             if ($user->perfil === 'contratar') {
-                return redirect()->route('minhacontacliente'); 
+                return view('fenmi/minhacontacliente', ['user' => $user]); 
             }
             
             if ($user->perfil === 'oferecer') {
-                return redirect()->route('minhacontaprofissional'); 
+                return redirect()->route('minhacontaprofissional')->with('user', $user); 
             }
 
             // fallback (caso não tenha tipo definido)
-            return redirect()->route('inicio'); 
+            //return redirect()->route('inicio')->with('user', 'Tipo de usuário não definido.'); 
         }
 
         return back()->withErrors([

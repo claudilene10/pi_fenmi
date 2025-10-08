@@ -201,6 +201,7 @@ section {
   background: var(--bg-secundario);
   margin: 15px 0 20px;
   padding: 20px;
+  color: var(--texto-secundario);
   border-radius: var(--radius);
   box-shadow: 0 4px 10px var(--sombra);
   opacity: 0;

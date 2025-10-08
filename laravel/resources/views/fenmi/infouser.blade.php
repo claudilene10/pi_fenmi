@@ -10,17 +10,18 @@
 <body>
   <div class="form-container">
     <div class="btn-voltar">
-    <a href="{{ route('minhacontacliente') }}">◀ Voltar</a>
+    <a href="{{ route('login.form') }}">◀ Voltar</a>
   </div>
    <h2>Meus Dados</h2>
+
  
         {{-- Exibição dos dados do usuário autenticado --}}
 <div class="info">
 <h3 id="nomeUsuario">{{ Auth::user()->name ?? 'Usuário' }}</h3>
-<p><strong>E-mail:</strong> <span id="emailUsuario">{{ Auth::user()->email ?? 'usuario@gmail.com' }}</span></p>
-<p><strong>Telefone:</strong> <span id="telefoneUsuario">{{ Auth::user()->telefone ?? '(00) 00000-0000' }}</span></p>
-<p><strong>Endereço:</strong> <span id="enderecoUsuario">{{ Auth::user()->endereco ?? 'Não informado' }}</span></p>
-<p><strong>CPF:</strong> <span id="cpfUsuario">{{ Auth::user()->cpf ?? 'Não informado' }}</span></p>
+<p><strong>E-mail:</strong> <span id="emailUsuario">{{ $usuario['email'] }}</span></p>
+<p><strong>Telefone:</strong> <span id="telefoneUsuario">{{ $usuario['telefone'] }}</span></p>
+<p><strong>Endereço:</strong> <span id="enderecoUsuario">{{ $usuario['endereco'] }}</span></p>
+<p><strong>CPF:</strong> <span id="cpfUsuario">{{ $usuario['cpf'] }}</span></p>
 </div>
  
    <form id="perfilForm" class="form-box" action="{{ route('infouser.update') }}" method="POST">

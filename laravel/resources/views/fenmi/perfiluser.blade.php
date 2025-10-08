@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+<link rel="stylesheet" href="{{asset('CSS/perfiluser.css');}}">
   <!-- Estilos -->
   <link rel="stylesheet" href="CSS/perfiluser.css" />
 </head>
