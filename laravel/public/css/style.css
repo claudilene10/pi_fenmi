@@ -652,7 +652,36 @@ font-size: 14px;
 }
  
  
- 
+.link-back {
+  display: block;         /* permite margin-top funcionar */
+  color: #EF2F7E;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+  margin-top: 2rem;       /* empurra o link para baixo */
+}
+
+
+.link-back::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #EF2F7E;
+  transition: width 0.3s ease;
+}
+
+.link-back:hover {
+  color: #d61f70;               /* muda cor do texto levemente */
+}
+
+.link-back:hover::after {
+  width: 100%;                  /* underline animado ao passar o mouse */
+}
+
  
  
 footer {
@@ -664,6 +693,31 @@ footer {
 }
  
 /* ==================== RESPONSIVIDADE ==================== */
+/* Desktop: grid de cards lado a lado */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  overflow: visible; /* nada de scroll horizontal */
+}
+.carousel-btn {
+  display: none; /* botões do carrossel só no mobile */
+}
+
+/* Carrossel aparece só em telas menores que 1024px */
+@media (max-width: 1024px) {
+  .service-grid {
+    display: flex;       /* ativa o carrossel */
+    overflow-x: auto;    /* scroll horizontal */
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-btn {
+    display: block;      /* mostra os botões */
+  }
+}
+
  
 /* Tablets (até 1024px) */
 @media (max-width: 1024px) {
@@ -792,7 +846,22 @@ footer {
     margin: 0 0 1.5rem 0;
   }
  
- 
+ @media (max-width: 768px) {
+  .actions {
+    display: flex;
+    flex-direction: column; /* deixa os botões um embaixo do outro */
+    align-items: center;    /* centraliza no meio da tela */
+    justify-content: center;
+    gap: 0.1rem;              /* espaçamento entre os botões */
+    width: 100%;
+    text-align: center;
+  }
+
+  .actions .btn {
+    width: 80%;             /* deixa o botão mais largo no mobile */
+    max-width: 300px;
+  }
+}
  
  
 }

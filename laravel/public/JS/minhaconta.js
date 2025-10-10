@@ -116,10 +116,12 @@ function confirmarSaida() {
 }
 
 
-
-logoutBtn?.addEventListener("click", (e) => {
-  e.preventDefault();
-  abrirModal();
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logout-btn");
+  logoutBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    abrirModal();
+  });
 });
 
 // INICIALIZAÇÃO

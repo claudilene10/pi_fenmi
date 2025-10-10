@@ -19,9 +19,8 @@
 const menuBtn = document.getElementById('menu');
 const navUl = document.querySelector('nav ul');
 
-// Alterna a classe 'show' ao clicar no hamburger
 menuBtn.addEventListener('click', () => {
-  navUl.classList.toggle('show');
+  navUl.classList.toggle('active');
 });
 
   const prevBtn = document.querySelector('.carousel-btn.prev');
